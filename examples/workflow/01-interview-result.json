@@ -1,0 +1,222 @@
+{
+  "schema_version": "genealogy-handoff-1",
+  "task": {
+    "kind": "interview",
+    "question": "What does Nora's account establish or leave open about GS-P1 and her parents?",
+    "status": "unresolved"
+  },
+  "sources": [
+    {
+      "id": "GS-S1",
+      "title": "Supplied Nora transcript",
+      "kind": "interview",
+      "access": "read",
+      "locator": "01-interview-input.md, U001-U003",
+      "notes": "Synthetic case GS-DEMO-01. Text only; no audio supplied. Nora reports family accounts and an online-tree lead."
+    },
+    {
+      "id": "GS-S2",
+      "title": "Supplied owner-accepted tree snapshot",
+      "kind": "tree",
+      "access": "read",
+      "locator": "01-interview-input.md, supplied case context",
+      "notes": "Snapshot says GS-P1 birth year 1880 is accepted. Its supporting evidence is unavailable; acceptance is preserved, not verified as historical truth."
+    },
+    {
+      "id": "GS-S3",
+      "title": "Online tree mentioned by Nora",
+      "kind": "tree",
+      "access": "not-inspected",
+      "locator": "GS-S1, U003",
+      "notes": "No URL, image or copy supplied. Author and underlying sources are unknown. Only Nora's account of it was read."
+    }
+  ],
+  "people": [
+    {
+      "id": "GS-P1",
+      "label": "Mara Vale, family research subject",
+      "identity": "supplied-person",
+      "notes": "Supplied same-case tree ID; Nora identifies her as her grandmother."
+    },
+    {
+      "id": "GS-P2",
+      "label": "Nora, narrator",
+      "identity": "supplied-person",
+      "notes": "Supplied same-case speaker ID. No additional biography or living status inferred."
+    },
+    {
+      "id": "GS-P3",
+      "label": "Elin, reported mother",
+      "identity": "source-bound",
+      "notes": "A working person mentioned as Mara's mother by Nora in U002; surname and external identity unknown."
+    },
+    {
+      "id": "GS-P4",
+      "label": "Tomas, reported online-tree lead",
+      "identity": "source-bound",
+      "notes": "Named in Nora's account of an unseen online tree, U003. Retained as a lead, not an established father or an identified external person."
+    }
+  ],
+  "claims": [
+    {
+      "id": "GS-C1",
+      "person_id": "GS-P1",
+      "predicate": "grandmother",
+      "value": "Reported grandmother of Nora",
+      "related_person_id": "GS-P2",
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "GS-S1",
+          "locator": "U001"
+        }
+      ],
+      "notes": "Direction: GS-P1 is reported to be grandmother of GS-P2. No maternal/paternal branch or intervening parent is specified."
+    },
+    {
+      "id": "GS-C2",
+      "person_id": "GS-P1",
+      "predicate": "birth",
+      "value": {
+        "date": "about 1880",
+        "place": "Northmere"
+      },
+      "related_person_id": null,
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "GS-S1",
+          "locator": "U001"
+        }
+      ],
+      "notes": "Nora retells a family account, not a firsthand birth observation. Approximate date preserved; no documentary confirmation."
+    },
+    {
+      "id": "GS-C3",
+      "person_id": "GS-P1",
+      "predicate": "mother",
+      "value": "Reported mother named Elin",
+      "related_person_id": "GS-P3",
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "GS-S1",
+          "locator": "U002"
+        }
+      ],
+      "notes": "Direction: GS-P1 is the reported child of GS-P3. Nora recalls the name; no surname or birth record is supplied."
+    },
+    {
+      "id": "GS-C4",
+      "person_id": "GS-P1",
+      "predicate": "father-name-lead",
+      "value": {
+        "reported_name": "Tomas",
+        "mentioned_person_id": "GS-P4",
+        "mentioned_source_id": "GS-S3"
+      },
+      "related_person_id": null,
+      "basis": "oral",
+      "support": "unassessed",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "GS-S1",
+          "locator": "U003"
+        }
+      ],
+      "notes": "Preserves what Nora says the online tree claimed. It is not a verified father relationship, a read tree entry or independent support."
+    },
+    {
+      "id": "GS-C5",
+      "person_id": "GS-P1",
+      "predicate": "owner_recorded_birth_year",
+      "value": "1880",
+      "related_person_id": null,
+      "basis": "document",
+      "support": "unassessed",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "GS-S2",
+          "locator": "supplied case context"
+        }
+      ],
+      "notes": "Describes an existing owner-accepted value. The handoff remains proposed; the original tree value and acceptance status are not changed."
+    }
+  ],
+  "hypotheses": [],
+  "searches": [],
+  "coverage": [
+    {
+      "item": "GS-S1, U001: Nora names her grandmother",
+      "disposition": "proposed",
+      "target_ids": [
+        "GS-P1",
+        "GS-P2",
+        "GS-C1"
+      ],
+      "reason": "Supplied people and the reported grandmother link retained without inventing an intermediate parent."
+    },
+    {
+      "item": "GS-S1, U001: family birth account",
+      "disposition": "proposed",
+      "target_ids": [
+        "GS-C2"
+      ],
+      "reason": "Approximate date, place and family-account provenance retained."
+    },
+    {
+      "item": "GS-S1, U002: mother called Elin",
+      "disposition": "proposed",
+      "target_ids": [
+        "GS-P3",
+        "GS-C3"
+      ],
+      "reason": "Named mother retained as a source-bound proposal, without a guessed surname."
+    },
+    {
+      "item": "GS-S1, U002: no birth record",
+      "disposition": "lead",
+      "target_ids": [
+        "GS-S1"
+      ],
+      "reason": "No documentary birth evidence supplied; identifying a relevant record remains a next step."
+    },
+    {
+      "item": "GS-S1, U003: Tomas named as father in an online tree",
+      "disposition": "lead",
+      "target_ids": [
+        "GS-P4",
+        "GS-C4"
+      ],
+      "reason": "The name is preserved as a lead; no established father edge is created."
+    },
+    {
+      "item": "GS-S1, U003: unknown online-tree author and sources",
+      "disposition": "lead",
+      "target_ids": [
+        "GS-S3"
+      ],
+      "reason": "Unseen tree and unknown provenance retained; do not count it as checked evidence."
+    },
+    {
+      "item": "GS-S2: accepted birth year 1880",
+      "disposition": "proposed",
+      "target_ids": [
+        "GS-C5"
+      ],
+      "reason": "Owner acceptance is described without replacing it or treating it as proof of birth."
+    }
+  ],
+  "next_steps": [
+    "Study any supplied birth-record leads for Mara Vale near 1880 in Northmere; compare identifying details before linking a record to GS-P1.",
+    "If the owner later supplies the online-tree entry, identify its sources before assessing dependence; no lookup is performed now."
+  ]
+}

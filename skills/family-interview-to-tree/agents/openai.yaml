@@ -1,0 +1,4 @@
+interface:
+  display_name: "Family Interview to Tree"
+  short_description: "Turn interviews into source-linked tree proposals"
+  default_prompt: "Use $family-interview-to-tree to turn this interview into source-linked family-tree proposals and a complete mention ledger."

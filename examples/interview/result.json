@@ -1,0 +1,311 @@
+{
+  "schema_version": "genealogy-handoff-1",
+  "task": {
+    "kind": "interview",
+    "question": "What proposals and leads are supported by U056 and U078?",
+    "status": "unresolved"
+  },
+  "sources": [
+    {
+      "id": "FAM-INT-02",
+      "title": "Supplied English transcript excerpt",
+      "kind": "interview",
+      "access": "read",
+      "locator": "input.md, U056 and U078",
+      "notes": "Editorial translation of synthetic testimony; only these two utterances are in scope. No audio heard."
+    },
+    {
+      "id": "FAM-DOC-12",
+      "title": "Later family notebook",
+      "kind": "other",
+      "access": "not-inspected",
+      "locator": "FAM-INT-02, U056",
+      "notes": "Mentioned, not supplied. Vera reports possession and provenance; compiler is unknown."
+    },
+    {
+      "id": "EX-PHOTO-01",
+      "title": "Mentioned city photographs",
+      "kind": "photo",
+      "access": "not-inspected",
+      "locator": "FAM-INT-02, U078",
+      "notes": "Images not supplied. No visual identification or position inferred."
+    }
+  ],
+  "people": [
+    {
+      "id": "FAM-P101",
+      "label": "Vera",
+      "identity": "supplied-person",
+      "notes": "Supplied same-case narrator ID."
+    },
+    {
+      "id": "FAM-P102",
+      "label": "Pavel",
+      "identity": "supplied-person",
+      "notes": "Supplied same-case ID."
+    },
+    {
+      "id": "FAM-P106",
+      "label": "Mikhail (Misha)",
+      "identity": "supplied-person",
+      "notes": "Supplied same-case ID and alias."
+    },
+    {
+      "id": "EX-P1",
+      "label": "Unnamed mother",
+      "identity": "unnamed-position",
+      "notes": "Vera refers to Mother in U056 and the shared mother in U078; a single working position within this excerpt."
+    },
+    {
+      "id": "EX-P2",
+      "label": "Unnamed father",
+      "identity": "unnamed-position",
+      "notes": "Shared father reported in U078; no name supplied."
+    }
+  ],
+  "claims": [
+    {
+      "id": "FAM-C150",
+      "person_id": "FAM-P101",
+      "predicate": "artifact_provenance",
+      "value": {
+        "source_id": "FAM-DOC-12",
+        "possession": "Vera reports having the notebook",
+        "compiled": "after the death of the mother",
+        "basis_of_some_entries": "Vera's own stories to children",
+        "compiler": "unknown"
+      },
+      "related_person_id": null,
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "FAM-INT-02",
+          "locator": "U056"
+        }
+      ],
+      "notes": "Possession and reported provenance do not identify the compiler. The children are not assigned to Vera as offspring. The notebook was not inspected."
+    },
+    {
+      "id": "EX-C1",
+      "person_id": "EX-P1",
+      "predicate": "death",
+      "value": {
+        "relative_date": "before the notebook was compiled"
+      },
+      "related_person_id": null,
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "FAM-INT-02",
+          "locator": "U056"
+        }
+      ],
+      "notes": "Relative sequence only; no death year, location or cause supplied."
+    },
+    {
+      "id": "EX-C2",
+      "person_id": "FAM-P101",
+      "predicate": "notebook_recollection",
+      "value": "Vera recalls a few notebook pages but is not showing or photographing it.",
+      "related_person_id": null,
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "FAM-INT-02",
+          "locator": "U056"
+        }
+      ],
+      "notes": "Reports recollection and access limits, not a transcription of the notebook."
+    },
+    {
+      "id": "EX-C3",
+      "person_id": "FAM-P106",
+      "predicate": "sibling",
+      "value": {
+        "shared_parents": true
+      },
+      "related_person_id": "FAM-P101",
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "FAM-INT-02",
+          "locator": "U078"
+        }
+      ],
+      "notes": "Misha is reported as Vera's brother with the same parents; a proposed relationship only."
+    },
+    {
+      "id": "EX-C4",
+      "person_id": "FAM-P106",
+      "predicate": "sibling",
+      "value": {
+        "shared_parents": true
+      },
+      "related_person_id": "FAM-P102",
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "FAM-INT-02",
+          "locator": "U078"
+        }
+      ],
+      "notes": "Misha is reported as Pavel's brother with the same parents; a proposed relationship only."
+    },
+    {
+      "id": "EX-C5",
+      "person_id": "FAM-P101",
+      "predicate": "shared_parent_group",
+      "value": {
+        "parent_ids": [
+          "EX-P1",
+          "EX-P2"
+        ],
+        "child_ids": [
+          "FAM-P101",
+          "FAM-P102",
+          "FAM-P106"
+        ],
+        "children_born": {
+          "count": 3,
+          "precision": "exact"
+        }
+      },
+      "related_person_id": null,
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "FAM-INT-02",
+          "locator": "U078"
+        }
+      ],
+      "notes": "Records Vera's account of three children with shared parents; no birth order or documentary verification inferred."
+    },
+    {
+      "id": "EX-C6",
+      "person_id": "FAM-P106",
+      "predicate": "photo_mention",
+      "value": {
+        "source_id": "EX-PHOTO-01",
+        "reported_presence": "no longer in the city photographs"
+      },
+      "related_person_id": null,
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "FAM-INT-02",
+          "locator": "U078"
+        }
+      ],
+      "notes": "Narrator attribution only. Images were not seen; absence from photographs does not establish death or its timing."
+    },
+    {
+      "id": "FAM-C199",
+      "person_id": "FAM-P101",
+      "predicate": "story",
+      "value": {
+        "summary": "Later acquaintances saw only Vera and Pavel and thought the family had two children. Vera says the family knew that three children had been born.",
+        "participant_ids": [
+          "FAM-P101",
+          "FAM-P102",
+          "FAM-P106"
+        ],
+        "text_type": "paraphrase"
+      },
+      "related_person_id": null,
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "FAM-INT-02",
+          "locator": "U078"
+        }
+      ],
+      "notes": "The viewing medium is unspecified. The separate mention of city photographs does not establish what acquaintances viewed. Their impression is not accepted as the family count."
+    }
+  ],
+  "hypotheses": [],
+  "searches": [],
+  "coverage": [
+    {
+      "item": "U056, notebook possession and provenance",
+      "disposition": "proposed",
+      "target_ids": [
+        "FAM-C150"
+      ],
+      "reason": "Possession, later compilation and oral provenance retained without assigning authorship."
+    },
+    {
+      "item": "U056, Mother's death",
+      "disposition": "proposed",
+      "target_ids": [
+        "EX-P1",
+        "EX-C1"
+      ],
+      "reason": "Relative death/compilation sequence retained without inventing a date."
+    },
+    {
+      "item": "U056, recalled pages and no displayed notebook",
+      "disposition": "proposed",
+      "target_ids": [
+        "EX-C2"
+      ],
+      "reason": "Recollection and actual access boundary retained."
+    },
+    {
+      "item": "U056, stories told to children",
+      "disposition": "lead",
+      "target_ids": [
+        "FAM-C150"
+      ],
+      "reason": "Unspecified group retained as provenance; number, identities and relationship to Vera remain unknown."
+    },
+    {
+      "item": "U078, shared parents and siblings",
+      "disposition": "proposed",
+      "target_ids": [
+        "EX-P1",
+        "EX-P2",
+        "EX-C3",
+        "EX-C4",
+        "EX-C5"
+      ],
+      "reason": "Three named sibling positions and their shared-parent group are represented as proposals."
+    },
+    {
+      "item": "U078, city photographs",
+      "disposition": "proposed",
+      "target_ids": [
+        "EX-C6"
+      ],
+      "reason": "Reported photo absence retained without claiming visual access."
+    },
+    {
+      "item": "U078, acquaintances' impression and family account",
+      "disposition": "conflict",
+      "target_ids": [
+        "FAM-C199",
+        "EX-C5"
+      ],
+      "reason": "Both accounts retained with attribution; acquaintances' impression does not replace the reported count."
+    }
+  ],
+  "next_steps": [
+    "If the user later supplies notebook pages, record what they show separately from Vera's testimony; ask who compiled them if the pages do not establish that.",
+    "If photographs are supplied, keep visible contents separate from narrator identification. The acquaintances' viewing medium remains unspecified."
+  ]
+}
