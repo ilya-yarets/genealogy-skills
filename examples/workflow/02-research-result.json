@@ -1,0 +1,460 @@
+{
+  "schema_version": "genealogy-handoff-1",
+  "task": {
+    "kind": "research",
+    "question": "Could the supplied register and index help identify GS-P1's parents?",
+    "status": "unresolved"
+  },
+  "sources": [
+    {
+      "id": "GS-S1",
+      "title": "Supplied Nora transcript",
+      "kind": "interview",
+      "access": "read",
+      "locator": "01-interview-input.md, U001-U003",
+      "notes": "Synthetic case GS-DEMO-01. Text only; no audio supplied. Nora reports family accounts and an online-tree lead."
+    },
+    {
+      "id": "GS-S2",
+      "title": "Supplied owner-accepted tree snapshot",
+      "kind": "tree",
+      "access": "read",
+      "locator": "01-interview-input.md, supplied case context",
+      "notes": "Snapshot says GS-P1 birth year 1880 is accepted. Its supporting evidence is unavailable; acceptance is preserved, not verified as historical truth."
+    },
+    {
+      "id": "GS-S3",
+      "title": "Online tree mentioned by Nora",
+      "kind": "tree",
+      "access": "not-inspected",
+      "locator": "GS-S1, U003",
+      "notes": "No URL, image or copy supplied. Author and underlying sources are unknown. Only Nora's account of it was read."
+    },
+    {
+      "id": "GS-S4",
+      "title": "Supplied entry-7 register transcription",
+      "kind": "document",
+      "access": "read",
+      "locator": "02-research-input.md, GS-S4, entry 7",
+      "notes": "Supplied text only. The underlying GS-S6 image is unavailable; informant, recording date, calendar and transcription method are unspecified."
+    },
+    {
+      "id": "GS-S5",
+      "title": "Supplied entry-7 index extract",
+      "kind": "index",
+      "access": "read",
+      "locator": "02-research-input.md, GS-S5",
+      "notes": "Explicitly copied from the same register entry represented by GS-S4. Not independent corroboration."
+    },
+    {
+      "id": "GS-S6",
+      "title": "Underlying register, entry 7",
+      "kind": "document",
+      "access": "unavailable",
+      "locator": "Described by GS-S4 and GS-S5 in 02-research-input.md",
+      "notes": "No scan or archival reference supplied. Reading the supplied extracts does not constitute reading this original."
+    },
+    {
+      "id": "GS-S7",
+      "title": "Supplied earlier search-log extract",
+      "kind": "other",
+      "access": "read",
+      "locator": "02-research-input.md, GS-S7",
+      "notes": "Reports a fictional earlier search dated 2026-11-05. The date is inherited from the case, not a new execution date."
+    }
+  ],
+  "people": [
+    {
+      "id": "GS-P1",
+      "label": "Mara Vale, family research subject",
+      "identity": "supplied-person",
+      "notes": "Supplied same-case tree ID; Nora identifies her as her grandmother."
+    },
+    {
+      "id": "GS-P2",
+      "label": "Nora, narrator",
+      "identity": "supplied-person",
+      "notes": "Supplied same-case speaker ID. No additional biography or living status inferred."
+    },
+    {
+      "id": "GS-P3",
+      "label": "Elin, reported mother",
+      "identity": "source-bound",
+      "notes": "A working person mentioned as Mara's mother by Nora in U002; surname and external identity unknown."
+    },
+    {
+      "id": "GS-P4",
+      "label": "Tomas, reported online-tree lead",
+      "identity": "source-bound",
+      "notes": "Named in Nora's account of an unseen online tree, U003. Retained as a lead, not an established father or an identified external person."
+    },
+    {
+      "id": "GS-P5",
+      "label": "Mara Vale, entry-7 candidate",
+      "identity": "source-bound",
+      "notes": "Subject of supplied GS-S4. Keep separate from GS-P1 until identity is established; separate working IDs do not prove two different historical people."
+    },
+    {
+      "id": "GS-P6",
+      "label": "Elin Voss, entry-7 mother",
+      "identity": "source-bound",
+      "notes": "Mother named in GS-S4 for GS-P5. Possible correspondence with GS-P3 is unresolved."
+    },
+    {
+      "id": "GS-P7",
+      "label": "Tomas Vale, entry-7 father",
+      "identity": "source-bound",
+      "notes": "Father named in GS-S4 for GS-P5. Do not merge with the unverified GS-P4 online-tree lead based on a given-name match."
+    }
+  ],
+  "claims": [
+    {
+      "id": "GS-C1",
+      "person_id": "GS-P1",
+      "predicate": "grandmother",
+      "value": "Reported grandmother of Nora",
+      "related_person_id": "GS-P2",
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "GS-S1",
+          "locator": "U001"
+        }
+      ],
+      "notes": "Direction: GS-P1 is reported to be grandmother of GS-P2. No maternal/paternal branch or intervening parent is specified."
+    },
+    {
+      "id": "GS-C2",
+      "person_id": "GS-P1",
+      "predicate": "birth",
+      "value": {
+        "date": "about 1880",
+        "place": "Northmere"
+      },
+      "related_person_id": null,
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "GS-S1",
+          "locator": "U001"
+        }
+      ],
+      "notes": "Nora retells a family account, not a firsthand birth observation. Approximate date preserved; no documentary confirmation."
+    },
+    {
+      "id": "GS-C3",
+      "person_id": "GS-P1",
+      "predicate": "mother",
+      "value": "Reported mother named Elin",
+      "related_person_id": "GS-P3",
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "GS-S1",
+          "locator": "U002"
+        }
+      ],
+      "notes": "Direction: GS-P1 is the reported child of GS-P3. Nora recalls the name; no surname or birth record is supplied."
+    },
+    {
+      "id": "GS-C4",
+      "person_id": "GS-P1",
+      "predicate": "father-name-lead",
+      "value": {
+        "reported_name": "Tomas",
+        "mentioned_person_id": "GS-P4",
+        "mentioned_source_id": "GS-S3"
+      },
+      "related_person_id": null,
+      "basis": "oral",
+      "support": "unassessed",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "GS-S1",
+          "locator": "U003"
+        }
+      ],
+      "notes": "Preserves what Nora says the online tree claimed. It is not a verified father relationship, a read tree entry or independent support."
+    },
+    {
+      "id": "GS-C5",
+      "person_id": "GS-P1",
+      "predicate": "owner_recorded_birth_year",
+      "value": "1880",
+      "related_person_id": null,
+      "basis": "document",
+      "support": "unassessed",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "GS-S2",
+          "locator": "supplied case context"
+        }
+      ],
+      "notes": "Describes an existing owner-accepted value. The handoff remains proposed; the original tree value and acceptance status are not changed."
+    },
+    {
+      "id": "GS-C6",
+      "person_id": "GS-P5",
+      "predicate": "birth",
+      "value": {
+        "date": "3 May 1879",
+        "place": "Northmere"
+      },
+      "related_person_id": null,
+      "basis": "document",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "GS-S4",
+          "locator": "entry 7"
+        }
+      ],
+      "notes": "Birth as transcribed for the record subject; original scan, calendar and recording circumstances are unverified. Not assigned to GS-P1."
+    },
+    {
+      "id": "GS-C7",
+      "person_id": "GS-P5",
+      "predicate": "mother",
+      "value": "Mother named Elin Voss",
+      "related_person_id": "GS-P6",
+      "basis": "document",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "GS-S4",
+          "locator": "entry 7, Mother field"
+        }
+      ],
+      "notes": "Direction: GS-P5 is the recorded child of GS-P6. This concerns the register candidate, not an accepted parent link for GS-P1."
+    },
+    {
+      "id": "GS-C8",
+      "person_id": "GS-P5",
+      "predicate": "father",
+      "value": "Father named Tomas Vale",
+      "related_person_id": "GS-P7",
+      "basis": "document",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "GS-S4",
+          "locator": "entry 7, Father field"
+        }
+      ],
+      "notes": "Direction: GS-P5 is the recorded child of GS-P7. This does not confirm the earlier online-tree lead for GS-P1."
+    },
+    {
+      "id": "GS-C9",
+      "person_id": "GS-P5",
+      "predicate": "birth-year",
+      "value": "1879",
+      "related_person_id": null,
+      "basis": "document",
+      "support": "dependent",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "GS-S5",
+          "locator": "entry-7 index extract"
+        }
+      ],
+      "notes": "Derivative index repeats the same underlying register as GS-S4. It is not a second independent witness."
+    },
+    {
+      "id": "GS-C10",
+      "person_id": "GS-P5",
+      "predicate": "recorded_household_address",
+      "value": "14 Mill Road",
+      "related_person_id": null,
+      "basis": "document",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "GS-S4",
+          "locator": "entry 7, Household address field"
+        }
+      ],
+      "notes": "Retains the stated household address for the record subject. No address for GS-P1 or longer residence period is inferred."
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "GS-H1",
+      "question": "Does entry-7 subject GS-P5 represent GS-P1?",
+      "candidate_ids": [
+        "GS-P1",
+        "GS-P5"
+      ],
+      "for": [
+        "GS-C2 and GS-C6 share a name/place and approximately compatible birth period.",
+        "GS-C3 and GS-C7 share the mother's given name Elin."
+      ],
+      "against": [
+        "GS-C5 records an accepted year of 1880, while GS-C6 reports 1879 for the candidate.",
+        "No independent record links GS-P1 to Elin Voss, Tomas Vale or 14 Mill Road.",
+        "GS-S6 is unavailable, so the transcription cannot be checked against the original."
+      ],
+      "dependence": "GS-S5 copies the register represented by GS-S4. The basis of the unseen GS-S3 online tree is unknown; it cannot be counted as independent corroboration.",
+      "conclusion": "A plausible lead, not established identity. Keep GS-P1/GS-P5, GS-P3/GS-P6 and GS-P4/GS-P7 separate as working records.",
+      "resolving_evidence": "A record independently tied to GS-P1 naming parents or an address, compared with entry 7; the original entry-7 scan to check its reading."
+    }
+  ],
+  "searches": [
+    {
+      "id": "GS-Q1",
+      "target": "Fictional Northmere birth index, described in GS-S7",
+      "query": "Mara Vale",
+      "scope": "1878-1882; pages 1-2 only",
+      "outcome": "found",
+      "origin": "supplied-log",
+      "searched_at": "2026-11-05",
+      "examined": "GS-S7 reports pages 1-2 and the entry-7 pointer reproduced in GS-S5. No new index search is performed here.",
+      "resume": "Page 3; pages 3-6 remain unread."
+    },
+    {
+      "id": "GS-Q2",
+      "target": "Underlying register GS-S6",
+      "query": "Entry 7, Mara Vale, birth recorded as 3 May 1879",
+      "scope": "Full entry, headings and any continuation; exact archival reference still missing",
+      "outcome": "not-run",
+      "origin": "planned",
+      "examined": "None of the original; only the supplied transcription and index were read.",
+      "resume": "If the owner supplies the scan or separately authorizes accessible research, check the text, parent names, address and any corrections."
+    }
+  ],
+  "coverage": [
+    {
+      "item": "GS-S1, U001: Nora names her grandmother",
+      "disposition": "proposed",
+      "target_ids": [
+        "GS-P1",
+        "GS-P2",
+        "GS-C1"
+      ],
+      "reason": "Supplied people and the reported grandmother link retained without inventing an intermediate parent."
+    },
+    {
+      "item": "GS-S1, U001: family birth account",
+      "disposition": "proposed",
+      "target_ids": [
+        "GS-C2"
+      ],
+      "reason": "Approximate date, place and family-account provenance retained."
+    },
+    {
+      "item": "GS-S1, U002: mother called Elin",
+      "disposition": "proposed",
+      "target_ids": [
+        "GS-P3",
+        "GS-C3"
+      ],
+      "reason": "Named mother retained as a source-bound proposal, without a guessed surname."
+    },
+    {
+      "item": "GS-S1, U002: no birth record",
+      "disposition": "lead",
+      "target_ids": [
+        "GS-S1"
+      ],
+      "reason": "No documentary birth evidence supplied; identifying a relevant record remains a next step."
+    },
+    {
+      "item": "GS-S1, U003: Tomas named as father in an online tree",
+      "disposition": "lead",
+      "target_ids": [
+        "GS-P4",
+        "GS-C4"
+      ],
+      "reason": "The name is preserved as a lead; no established father edge is created."
+    },
+    {
+      "item": "GS-S1, U003: unknown online-tree author and sources",
+      "disposition": "lead",
+      "target_ids": [
+        "GS-S3"
+      ],
+      "reason": "Unseen tree and unknown provenance retained; do not count it as checked evidence."
+    },
+    {
+      "item": "GS-S2: accepted birth year 1880",
+      "disposition": "proposed",
+      "target_ids": [
+        "GS-C5"
+      ],
+      "reason": "Owner acceptance is described without replacing it or treating it as proof of birth."
+    },
+    {
+      "item": "GS-S4, entry 7: candidate birth",
+      "disposition": "proposed",
+      "target_ids": [
+        "GS-P5",
+        "GS-C6",
+        "GS-H1"
+      ],
+      "reason": "Record subject and transcribed birth retained separately from the family subject."
+    },
+    {
+      "item": "GS-S4, entry 7: parents and household address",
+      "disposition": "proposed",
+      "target_ids": [
+        "GS-P6",
+        "GS-P7",
+        "GS-C7",
+        "GS-C8",
+        "GS-C10"
+      ],
+      "reason": "Parent roles and stated address retained for GS-P5 without merging earlier person records."
+    },
+    {
+      "item": "GS-S5: copied index extract",
+      "disposition": "proposed",
+      "target_ids": [
+        "GS-C9"
+      ],
+      "reason": "Year retained with dependent support; agreement does not create independent evidence."
+    },
+    {
+      "item": "GS-S6: underlying entry not supplied",
+      "disposition": "pending",
+      "target_ids": [
+        "GS-S6"
+      ],
+      "reason": "The original has not been inspected; GS-Q2 describes a future check, not completed work."
+    },
+    {
+      "item": "GS-S7: prior search and unread pages",
+      "disposition": "lead",
+      "target_ids": [
+        "GS-S7"
+      ],
+      "reason": "Prior query, date and resumption point carried in GS-Q1; search IDs are not coverage targets."
+    },
+    {
+      "item": "GS-P1 versus GS-P5: unresolved identity and year difference",
+      "disposition": "conflict",
+      "target_ids": [
+        "GS-C5",
+        "GS-C6",
+        "GS-H1"
+      ],
+      "reason": "Preserves the possible discrepancy without assuming the two records concern the same person or replacing acceptance."
+    }
+  ],
+  "next_steps": [
+    "Review whether the candidate can be identified as GS-P1 using the supplied evidence; do not import its parents or birth date automatically.",
+    "If later supplied, inspect a record independently tied to GS-P1 for parent names or address and compare with GS-C7, GS-C8 and GS-C10.",
+    "The original entry-7 image and unread index pages remain future work under the current no-browsing scope."
+  ]
+}

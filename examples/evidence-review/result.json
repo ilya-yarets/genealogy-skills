@@ -1,0 +1,162 @@
+{
+  "schema_version": "genealogy-handoff-1",
+  "task": {
+    "kind": "evidence-review",
+    "question": "Does the supplied evidence justify replacing P1's accepted birth year 1880 with 1879?",
+    "status": "unresolved"
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Supplied tree snapshot",
+      "kind": "tree",
+      "access": "read",
+      "locator": "input.md, tree snapshot",
+      "notes": "Reports accepted year 1880; original supporting evidence unavailable. Snapshot left unchanged."
+    },
+    {
+      "id": "S2",
+      "title": "Supplied register transcription",
+      "kind": "document",
+      "access": "read",
+      "locator": "input.md, register entry 7 transcription",
+      "notes": "Text read, underlying scan unavailable. Informant and transcription method unspecified."
+    },
+    {
+      "id": "S3",
+      "title": "Supplied index entry",
+      "kind": "index",
+      "access": "read",
+      "locator": "input.md, index entry",
+      "notes": "Explicitly copied from the same register entry as S2; not independent support."
+    }
+  ],
+  "people": [
+    {
+      "id": "P1",
+      "label": "Mara Vale, supplied tree subject",
+      "identity": "supplied-person",
+      "notes": "Accepted year 1880 preserved in the supplied snapshot; no parent names supplied."
+    },
+    {
+      "id": "P2",
+      "label": "Mara Vale, register candidate",
+      "identity": "source-bound",
+      "notes": "Entry 7 identifies this candidate with parents Tomas and Elin; identity with P1 remains unresolved."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "person_id": "P1",
+      "predicate": "birth-year",
+      "value": "1880",
+      "related_person_id": null,
+      "basis": "document",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "S1",
+          "locator": "tree snapshot"
+        }
+      ],
+      "notes": "Reports the owner-accepted value; this handoff remains a proposal and does not alter that acceptance."
+    },
+    {
+      "id": "C2",
+      "person_id": "P2",
+      "predicate": "birth",
+      "value": {
+        "date": "3 May 1879",
+        "parents": [
+          "Tomas Vale",
+          "Elin Vale"
+        ],
+        "place_association": "Northmere"
+      },
+      "related_person_id": null,
+      "basis": "document",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "S2",
+          "locator": "entry 7"
+        }
+      ],
+      "notes": "Transcribed contents for a separate candidate. Original image and calendar not established. Northmere is associated with the entry; its role as birthplace or residence is unspecified."
+    },
+    {
+      "id": "C3",
+      "person_id": "P2",
+      "predicate": "birth-year",
+      "value": "1879",
+      "related_person_id": null,
+      "basis": "document",
+      "support": "dependent",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "S3",
+          "locator": "index entry citing register entry 7"
+        }
+      ],
+      "notes": "Derivative index agrees with the transcript but is not independent evidence."
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "H1",
+      "question": "Does register candidate P2 represent tree person P1?",
+      "candidate_ids": [
+        "P1",
+        "P2"
+      ],
+      "for": [
+        "Same supplied name; C2 and C3 report 1879 for the register candidate."
+      ],
+      "against": [
+        "The accepted year in C1 is 1880.",
+        "No parent names or other independent identifiers are supplied for P1."
+      ],
+      "dependence": "S3 copies the register represented by S2; agreement is not two independent accounts.",
+      "conclusion": "Identity unresolved; the supplied material does not justify replacing P1's accepted year.",
+      "resolving_evidence": "A source tied independently to P1 naming parents, spouse or address, plus the original entry 7 scan to check the transcription. Compare P1's identifiers with Tomas and Elin and any additional record details."
+    }
+  ],
+  "searches": [],
+  "coverage": [
+    {
+      "item": "S1, accepted year",
+      "disposition": "proposed",
+      "target_ids": [
+        "C1"
+      ],
+      "reason": "Accepted state is described without overwriting it."
+    },
+    {
+      "item": "S2, conflicting candidate",
+      "disposition": "conflict",
+      "target_ids": [
+        "P2",
+        "C2",
+        "H1"
+      ],
+      "reason": "Candidate information retained separately from P1."
+    },
+    {
+      "item": "S3, derivative index",
+      "disposition": "proposed",
+      "target_ids": [
+        "C3",
+        "H1"
+      ],
+      "reason": "Dependence retained; not counted as corroboration."
+    }
+  ],
+  "next_steps": [
+    "Review the existing basis for P1's accepted 1880 value if supplied; seek identifiers that distinguish the candidates.",
+    "Propose checking the original entry 7 and an independent record tied to P1; no new search is performed."
+  ]
+}

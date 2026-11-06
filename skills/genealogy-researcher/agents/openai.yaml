@@ -1,0 +1,4 @@
+interface:
+  display_name: "Genealogy Research"
+  short_description: "Research family history with traceable sources"
+  default_prompt: "Use $genealogy-researcher to investigate my family-history question and show sources, limitations and the next step."

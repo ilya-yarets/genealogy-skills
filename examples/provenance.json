@@ -1,0 +1,36 @@
+{
+  "kind": "editorial-examples-not-model-executions",
+  "baseline_commit": "a0fac3e251a1a4e469d9a008d02855240fc376ae",
+  "scope": "Research and evidence-review are new synthetic examples. Interview is a focused English adaptation of U056 and U078; not the complete long-interview result.",
+  "corrections": {
+    "FAM-C150": "Unknown compiler; possession/provenance only.",
+    "FAM-C199": "Viewing medium unspecified; photograph context kept separate."
+  },
+  "originals": [
+    {
+      "repository_path": "evals/genealogy/boundaries/cases/interview-phase-2.md",
+      "sha256": "9853507f872d45059a828fe0ed0ecbadeeb8201e1c95a3f10318fc9b59b9eb5e",
+      "included_in_release": false
+    },
+    {
+      "repository_path": "evals/genealogy/notes-reason-recheck/runs/phase-1/answer.md",
+      "sha256": "7de6185e02e4f217c9d057ac776f920ae4bf714b1fd7a48227ca3b237a0e7ae5",
+      "included_in_release": false
+    },
+    {
+      "repository_path": "evals/genealogy/notes-reason-recheck/runs/phase-1/result.json",
+      "sha256": "c74dc9522d58a64dd5a9f1a2704952a04d61a8f014f5d2afa85d46b3e96f1e9b",
+      "included_in_release": false
+    },
+    {
+      "repository_path": "evals/genealogy/notes-reason-recheck/runs/phase-2/answer.md",
+      "sha256": "d6b8ce1515b49e8af289b6815f1e7482e20e515382460bf09194780ba5afa15b",
+      "included_in_release": false
+    },
+    {
+      "repository_path": "evals/genealogy/notes-reason-recheck/runs/phase-2/result.json",
+      "sha256": "138c7e876a5e79080bf735954daf17fd7288bfdc090893f50805b9b4575f0083",
+      "included_in_release": false
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Genealogy Evidence Review"
+  short_description: "Compare records, identity and relationship evidence"
+  default_prompt: "Use $genealogy-evidence-review to assess this identity, relationship or date claim from supplied materials and show the evidence, contradictions and next distinguishing record."

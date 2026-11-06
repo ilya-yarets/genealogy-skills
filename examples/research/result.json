@@ -1,0 +1,119 @@
+{
+  "schema_version": "genealogy-handoff-1",
+  "task": {
+    "kind": "research",
+    "question": "What next search could identify Mara Vale's parents?",
+    "status": "unresolved"
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Supplied family note",
+      "kind": "other",
+      "access": "read",
+      "locator": "input.md, family note, paragraph 1",
+      "notes": "Fictional family report, not documentary confirmation."
+    },
+    {
+      "id": "S2",
+      "title": "Supplied earlier search log",
+      "kind": "other",
+      "access": "read",
+      "locator": "input.md, search-log extract",
+      "notes": "Reports a prior search on 2026-11-01; not a new execution."
+    },
+    {
+      "id": "S3",
+      "title": "Supplied catalog extract",
+      "kind": "catalog",
+      "access": "read",
+      "locator": "input.md, catalog extract",
+      "notes": "Describes the index; the index pages and original register were not supplied."
+    }
+  ],
+  "people": [
+    {
+      "id": "P1",
+      "label": "Mara Vale",
+      "identity": "supplied-person",
+      "notes": "Supplied research subject; parents not established."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "person_id": "P1",
+      "predicate": "birth",
+      "value": {
+        "date": "about 1880",
+        "place": "Northmere"
+      },
+      "related_person_id": null,
+      "basis": "document",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "S1",
+          "locator": "paragraph 1"
+        }
+      ],
+      "notes": "Original approximate year and place retained; supplied note does not identify its informant."
+    }
+  ],
+  "hypotheses": [],
+  "searches": [
+    {
+      "id": "Q1",
+      "target": "Fictional Northmere birth index",
+      "query": "Mara Vale",
+      "scope": "1878-1882; pages 1-2",
+      "origin": "supplied-log",
+      "outcome": "no-match-in-scope",
+      "examined": "Earlier log reports pages 1-2 only, then access failed; not checked again here.",
+      "resume": "Page 3 when access resumes.",
+      "searched_at": "2026-11-01"
+    },
+    {
+      "id": "Q2",
+      "target": "Fictional Northmere birth index",
+      "query": "Mara Vale",
+      "scope": "1878-1882; pages 3-6",
+      "origin": "planned",
+      "outcome": "not-run",
+      "examined": "No pages read in this example.",
+      "resume": "If external research is later authorized and access is available, begin at page 3; record each page actually read."
+    }
+  ],
+  "coverage": [
+    {
+      "item": "S1, paragraph 1",
+      "disposition": "proposed",
+      "target_ids": [
+        "P1",
+        "C1"
+      ],
+      "reason": "Birth information retained at supplied precision."
+    },
+    {
+      "item": "S2, prior log",
+      "disposition": "lead",
+      "target_ids": [
+        "S2"
+      ],
+      "reason": "Prior scope and interruption retained as supplied-log, not performed-now."
+    },
+    {
+      "item": "S3, catalog",
+      "disposition": "lead",
+      "target_ids": [
+        "S3"
+      ],
+      "reason": "Unread index pages are a specific route; no underlying entries examined."
+    }
+  ],
+  "next_steps": [
+    "With later search authorization and access, read index pages 3-6; a no-match result would cover only the completed range.",
+    "For any candidate entry, obtain the original birth record and compare parent names, event date and location; keep a same-name candidate separate until distinguishing evidence supports identity."
+  ]
+}
