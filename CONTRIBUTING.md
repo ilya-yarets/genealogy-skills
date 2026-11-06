@@ -18,9 +18,8 @@ The repository is [ilya-yarets/genealogy-skills](https://github.com/ilya-yarets/
 Use [issues](https://github.com/ilya-yarets/genealogy-skills/issues)
 for a reproducible problem or proposal, and
 [pull requests](https://github.com/ilya-yarets/genealogy-skills/pulls) for a focused change.
-The initial candidate is on `codex/initial-publication`; `main` contains only an
-empty bootstrap commit until separately approved integration. Base proposed
-candidate fixes on that review branch. No tagged release has been issued.
+Base proposed changes on the current `main` branch and submit them through a
+pull request. No tagged release has been issued.
 Do not include private family records or unredacted responses.
 
 ## Decide where a change belongs

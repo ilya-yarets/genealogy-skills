@@ -10,9 +10,9 @@ or carry a source-linked result from one skill to the next.
 [Release downloads](https://github.com/ilya-yarets/genealogy-skills/releases) ·
 [Report an issue](https://github.com/ilya-yarets/genealogy-skills/issues)
 
-This is the initial publication candidate, under review on
-[`codex/initial-publication`](https://github.com/ilya-yarets/genealogy-skills/tree/codex/initial-publication).
-No tagged release has been issued, and the candidate has not been merged into `main`.
+The development source is available on
+[`main`](https://github.com/ilya-yarets/genealogy-skills/tree/main).
+No tagged release has been issued.
 
 These are instruction folders for an AI agent, not a family-tree application.
 You can use any one of them on its own. No private project, database, account,
@@ -78,12 +78,12 @@ skill does not grant access to a family archive or permission to update a tree.
 
 ## Install
 
-For this candidate, download the
-[review branch as a ZIP](https://github.com/ilya-yarets/genealogy-skills/archive/refs/heads/codex/initial-publication.zip)
-or clone that branch:
+Download the
+[main branch as a ZIP](https://github.com/ilya-yarets/genealogy-skills/archive/refs/heads/main.zip)
+or clone the repository:
 
 ```sh
-git clone --branch codex/initial-publication --single-branch https://github.com/ilya-yarets/genealogy-skills.git
+git clone --branch main --single-branch https://github.com/ilya-yarets/genealogy-skills.git
 ```
 
 Open the extracted folder or cloned `genealogy-skills` directory. Downloading or
