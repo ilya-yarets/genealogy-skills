@@ -1,0 +1,376 @@
+{
+  "schema_version": "genealogy-handoff-1",
+  "task": {
+    "kind": "interview",
+    "question": "Сохранить ровно троих детей Анны и восстановленное имя третьего ребёнка, различив двух Петров.",
+    "status": "unresolved"
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Синтетическое интервью: child-position",
+      "kind": "interview",
+      "access": "read",
+      "locator": "evals/cases/child-position.md",
+      "notes": "Прочитан только предоставленный текст с метками S1/L; аудио не прослушивалось. Каждая реплика рассмотрена. Учтено 9 существенных элементов в coverage. Результат — предложения; реальное дерево и внешние источники не открывались."
+    }
+  ],
+  "people": [
+    {
+      "id": "P1",
+      "label": "Нина — рассказчица",
+      "identity": "source-bound",
+      "notes": "Автор всех трёх реплик; восстановление имени исходит от неё же и не является независимым источником."
+    },
+    {
+      "id": "P2",
+      "label": "Анна — мать троих детей",
+      "identity": "source-bound",
+      "notes": "Материнство трёх детей названо прямо в L1; принятия владельцем не было."
+    },
+    {
+      "id": "P3",
+      "label": "Пётр — ребёнок Анны, умерший младенцем",
+      "identity": "source-bound",
+      "notes": "Первый названный Пётр из L1 и L2; не объединён с позднее названным Петром P5."
+    },
+    {
+      "id": "P4",
+      "label": "Лида — ребёнок Анны",
+      "identity": "source-bound",
+      "notes": "Входит в прямо названную тройку детей Анны; отдельного рождения или дальнейшей судьбы не сообщено."
+    },
+    {
+      "id": "P5",
+      "label": "Пётр — ребёнок Анны из третьей перечисленной позиции",
+      "identity": "source-bound",
+      "notes": "В L1 имя третьей позиции забыто; L3 прямо заполняет именно этот пробел именем Пётр. Карточка переиспользована, четвёртый ребёнок не создан. «Третий» — место в перечислении, не установленная очерёдность рождения."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "person_id": "P2",
+      "predicate": "child_count",
+      "value": {
+        "count": 3,
+        "precision": "exact"
+      },
+      "related_person_id": null,
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "S1",
+          "locator": "L1",
+          "excerpt": "У Анны трое детей"
+        }
+      ],
+      "notes": "Ровно три названные в этом рассказе позиции представлены P3, P4 и P5."
+    },
+    {
+      "id": "C2",
+      "person_id": "P3",
+      "predicate": "child_of",
+      "value": "ребёнок",
+      "related_person_id": "P2",
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "S1",
+          "locator": "L1",
+          "excerpt": "У Анны трое детей: Пётр, Лида и третий"
+        }
+      ],
+      "notes": "Направление: P3 — ребёнок Анны P2; это первый упомянутый Пётр."
+    },
+    {
+      "id": "C3",
+      "person_id": "P4",
+      "predicate": "child_of",
+      "value": "ребёнок",
+      "related_person_id": "P2",
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "S1",
+          "locator": "L1",
+          "excerpt": "У Анны трое детей: Пётр, Лида и третий"
+        }
+      ],
+      "notes": "Направление: Лида P4 — ребёнок Анны P2."
+    },
+    {
+      "id": "C4",
+      "person_id": "P5",
+      "predicate": "child_of",
+      "value": "ребёнок",
+      "related_person_id": "P2",
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "S1",
+          "locator": "L1",
+          "excerpt": "и третий, имя забыла."
+        },
+        {
+          "source_id": "S1",
+          "locator": "L3",
+          "excerpt": "третьего тоже звали Пётр"
+        }
+      ],
+      "notes": "Направление: P5 — ребёнок Анны P2 из той же третьей позиции L1, прямо названный в L3; нового ребёнка не добавлено."
+    },
+    {
+      "id": "C5",
+      "person_id": "P3",
+      "predicate": "name",
+      "value": "Пётр",
+      "related_person_id": null,
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "S1",
+          "locator": "L1",
+          "excerpt": "Пётр, Лида и третий"
+        },
+        {
+          "source_id": "S1",
+          "locator": "L2",
+          "excerpt": "Пётр умер младенцем."
+        }
+      ],
+      "notes": "Имя первого названного Петра; совпадение имени с P5 не означает совпадения личности."
+    },
+    {
+      "id": "C6",
+      "person_id": "P4",
+      "predicate": "name",
+      "value": "Лида",
+      "related_person_id": null,
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "S1",
+          "locator": "L1",
+          "excerpt": "Пётр, Лида и третий"
+        }
+      ],
+      "notes": "Имя сохранено в форме рассказчицы; полная форма не додумана."
+    },
+    {
+      "id": "C7",
+      "person_id": "P5",
+      "predicate": "name_recollection",
+      "value": {
+        "state": "первоначальный пробел памяти",
+        "wording": "имя забыла",
+        "filled_by_claim": "C8"
+      },
+      "related_person_id": null,
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "S1",
+          "locator": "L1",
+          "excerpt": "и третий, имя забыла."
+        },
+        {
+          "source_id": "S1",
+          "locator": "L3",
+          "excerpt": "Вспомнила: третьего тоже звали Пётр"
+        }
+      ],
+      "notes": "История восстановления имени: в L1 Нина не вспомнила имя, в L3 вспомнила. Это не изменение имени самого ребёнка и не остающаяся текущей неизвестность."
+    },
+    {
+      "id": "C8",
+      "person_id": "P5",
+      "predicate": "name",
+      "value": "Пётр",
+      "related_person_id": null,
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "S1",
+          "locator": "L3",
+          "excerpt": "Вспомнила: третьего тоже звали Пётр"
+        },
+        {
+          "source_id": "S1",
+          "locator": "L1",
+          "excerpt": "и третий, имя забыла."
+        }
+      ],
+      "notes": "Явное дополнение C7: Нина связала восстановленное имя с уже существующей третьей позицией P5. Причина изменения записи — «Вспомнила»."
+    },
+    {
+      "id": "C9",
+      "person_id": "P3",
+      "predicate": "death",
+      "value": "младенцем",
+      "related_person_id": null,
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "S1",
+          "locator": "L2",
+          "excerpt": "Пётр умер младенцем."
+        }
+      ],
+      "notes": "Отнесено к ранее названному Петру P3; точная дата и численный возраст не сообщены."
+    },
+    {
+      "id": "C10",
+      "person_id": "P5",
+      "predicate": "relative_birth",
+      "value": {
+        "wording": "родился позже",
+        "comparison": "первый упомянутый Пётр P3",
+        "precision": "relative"
+      },
+      "related_person_id": "P3",
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "S1",
+          "locator": "L3",
+          "excerpt": "третьего тоже звали Пётр, он родился позже"
+        }
+      ],
+      "notes": "Относительное указание для второго Петра P5 по сравнению с первым Петром P3. Год, интервал и рождение после смерти P3 не утверждаются."
+    },
+    {
+      "id": "C11",
+      "person_id": "P5",
+      "predicate": "reached_old_age",
+      "value": "дожил до старости",
+      "related_person_id": null,
+      "basis": "oral",
+      "support": "single-source",
+      "review": "proposed",
+      "source_refs": [
+        {
+          "source_id": "S1",
+          "locator": "L3",
+          "excerpt": "и дожил до старости."
+        }
+      ],
+      "notes": "Сохранена качественная продолжительность жизни; численный возраст и факт смерти или текущей жизни не выведены."
+    }
+  ],
+  "hypotheses": [],
+  "searches": [],
+  "coverage": [
+    {
+      "item": "S1 L1–L3 — Нина как единая рассказчица",
+      "disposition": "proposed",
+      "target_ids": [
+        "P1"
+      ],
+      "reason": "Реплики связаны с одним говорящим; повторение не считается независимым подтверждением."
+    },
+    {
+      "item": "S1 L1 — Анна и ровно трое детей",
+      "disposition": "proposed",
+      "target_ids": [
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "reason": "Представлены ровно три ребёнка и три направленные связи ребёнок → Анна."
+    },
+    {
+      "item": "S1 L1 — первый Пётр",
+      "disposition": "proposed",
+      "target_ids": [
+        "P3",
+        "C5"
+      ],
+      "reason": "Первое именованное лицо сохранено отдельно от второго одноимённого ребёнка."
+    },
+    {
+      "item": "S1 L1 — Лида",
+      "disposition": "proposed",
+      "target_ids": [
+        "P4",
+        "C6"
+      ],
+      "reason": "Сохранено имя второго перечисленного ребёнка без вывода о порядке рождения."
+    },
+    {
+      "item": "S1 L1 — третья позиция, имя забыто",
+      "disposition": "proposed",
+      "target_ids": [
+        "P5",
+        "C7"
+      ],
+      "reason": "Исходный пробел памяти сохранён с привязкой к той же карточке, которая дополнена в L3."
+    },
+    {
+      "item": "S1 L2 — смерть первого Петра младенцем",
+      "disposition": "proposed",
+      "target_ids": [
+        "P3",
+        "C9"
+      ],
+      "reason": "Качественный возраст смерти сохранён без перевода в точную дату."
+    },
+    {
+      "item": "S1 L3 — вспомнила имя третьего: тоже Пётр",
+      "disposition": "proposed",
+      "target_ids": [
+        "P5",
+        "C8",
+        "C7"
+      ],
+      "reason": "Восстановление связано с L1 и причиной «Вспомнила»; ребёнок не продублирован и два Петра не слиты."
+    },
+    {
+      "item": "S1 L3 — второй Пётр родился позже",
+      "disposition": "proposed",
+      "target_ids": [
+        "P5",
+        "C10"
+      ],
+      "reason": "Сохранено только относительное указание; точные даты и общий порядок всех детей не додуманы."
+    },
+    {
+      "item": "S1 L3 — второй Пётр дожил до старости",
+      "disposition": "proposed",
+      "target_ids": [
+        "P5",
+        "C11"
+      ],
+      "reason": "Финальная часть последней реплики сохранена отдельно от сведений о рождении."
+    }
+  ],
+  "next_steps": [
+    "Для документальной проверки различить записи о рождении двух Петров и запись о смерти первого Петра; поиск документов здесь не выполнялся.",
+    "Считать три позиции уже согласованными по этому рассказу: повторно спрашивать имя третьего ребёнка не требуется. Все реплики обработаны; внешнего подтверждения пока нет."
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "case_id": "kinship-explicit",
+  "assessment": "source-based human/independent-agent review, not deterministic language matching",
+  "critical_invariant": "Preserve explicit Olga–Nina cousin relationship as oral proposed evidence. Do not overcorrect by dropping a clear relationship. Photograph remains unavailable.",
+  "shared_checks": [
+    "Source locators and uncertainty preserved",
+    "No invented inspection, identity merge or external action",
+    "All substantive supplied utterances have visible coverage; structural PASS alone does not prove this"
+  ]
+}

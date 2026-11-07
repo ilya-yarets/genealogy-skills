@@ -86,6 +86,52 @@ An unnamed position's number is bookkeeping, not birth order.
   its inputs and show the calculation; for a hypothesis, give grounds and a caveat.
 - An empty source field does not mean "did not happen." Do not average readings.
 
+### Typed value references and binary relationships
+
+The following optional fields have reference semantics at the immediate
+`claims[].value` object level. If present, `parent_ids`, `child_ids` and
+`participant_ids` must be arrays of existing `people[].id` strings; empty
+arrays are allowed for an unassigned group. `source_id` must be one existing
+`sources[].id` string. A source ID is not a person ID, even when it exists in
+this result. These checks do not establish identity, parent assignments,
+group completeness or independent support.
+
+For example, `{"parent_ids":["P1"],"child_ids":["P2"]}` requires both people;
+`{"source_id":"S2"}` requires the source, even if unavailable. It does not
+claim that S2 was read: cite the actually read evidence in `source_refs`.
+Other value fields remain extension data. The validator does not scan prose
+for ID-like text or recursively infer references in arbitrary nested objects.
+
+These exact predicates describe binary relationships and require a non-null
+`related_person_id` pointing to an existing person:
+
+- `parent`, `mother`, `father`, `child`, `son`, `daughter`;
+- `sibling`, `brother`, `sister`, `spouse`, `grandparent`, `grandmother`,
+  `grandfather`, `cousin`;
+- `parent_of`, `mother_of`, `father_of`, `child_of`, `son_of`, `daughter_of`;
+- `sibling_of`, `brother_of`, `sister_of`, `spouse_of`, `grandparent_of`,
+  `grandmother_of`, `grandfather_of`, `cousin_of`, `stepfather_of`, `stepmother_of`.
+
+Explain direction and the reported type of kinship in `notes`; these predicates
+do not by themselves establish biological kinship. A shared group such as
+`shared_parent_group` can instead use the typed arrays without claiming a
+single binary relationship. Other predicate names remain allowed; they are
+not automatically classified by spelling or suffix.
+
+If a narrator says "the photograph stayed with a cousin" without identifying
+whose cousin, preserve the unnamed custodian and the reported term, with the
+second participant unresolved. Use a mention such as `reported_kinship_term`
+with `related_person_id: null` and a coverage lead or hypothesis; do not add
+a `cousin`/`cousin_of` edge to the narrator merely because that reading is
+plausible. "My cousin" supplies the second participant when the speaker is
+known. `review: proposed` does not explain or resolve an ambiguous attribution.
+
+This is stricter validation of the v1 reference conventions, not a new format
+or a tree mutation. Earlier results with dangling typed references or missing
+binary participants now fail; preserve historical outputs and record their
+validation status rather than silently rewriting them. Structural PASS still
+does not establish that a relationship is supported by the source.
+
 ## Hypotheses, searches and coverage
 
 Hypothesis:

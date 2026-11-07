@@ -5,6 +5,20 @@ import json
 from pathlib import Path
 
 
+# These exact fields and predicates have reference semantics in v1. Other
+# value data and predicate names remain extension-friendly; do not infer IDs
+# from suffixes, prose, or arbitrary nested objects.
+VALUE_PERSON_ID_ARRAYS = ("parent_ids", "child_ids", "participant_ids")
+BINARY_RELATION_PREDICATES = frozenset({
+    "parent", "mother", "father", "child", "son", "daughter",
+    "sibling", "brother", "sister", "spouse", "grandparent",
+    "grandmother", "grandfather", "cousin",
+    "parent_of", "mother_of", "father_of", "child_of", "son_of", "daughter_of",
+    "sibling_of", "brother_of", "sister_of", "spouse_of", "grandparent_of",
+    "grandmother_of", "grandfather_of", "cousin_of", "stepfather_of", "stepmother_of",
+})
+
+
 def validate(data):
     errors = []
 
@@ -67,7 +81,22 @@ def validate(data):
         require(row.get("person_id") in ids["people"], "claim.person_id: dangling reference")
         related = row.get("related_person_id")
         require(related is None or (text(related) and related in ids["people"]), "claim.related_person_id: dangling reference")
-        require(text(row.get("value")) or isinstance(row.get("value"), dict), "claim.value: expected text or object")
+        if row["predicate"] in BINARY_RELATION_PREDICATES:
+            require(related is not None, "claim.related_person_id: required for binary relationship")
+        value = row.get("value")
+        require(text(value) or isinstance(value, dict), "claim.value: expected text or object")
+        if isinstance(value, dict):
+            for key in VALUE_PERSON_ID_ARRAYS:
+                if key not in value:
+                    continue
+                references = value[key]
+                require(isinstance(references, list), f"claim.value.{key}: expected array of person IDs")
+                if isinstance(references, list):
+                    require(all(text(ident) and ident in ids["people"] for ident in references),
+                            f"claim.value.{key}: dangling person reference")
+            if "source_id" in value:
+                ident = value["source_id"]
+                require(text(ident) and ident in ids["sources"], "claim.value.source_id: dangling source reference")
         require(row.get("basis") in {"document", "oral", "machine", "inference", "calculation"}, "claim.basis: invalid")
         require(row.get("support") in {"unassessed", "single-source", "independent-support", "dependent", "conflicting"}, "claim.support: invalid")
         require(row.get("review") == "proposed", "claim.review: only proposals are supported")

@@ -80,6 +80,11 @@ Each proposed claim needs an ID, person or participants, one event/attribute/
 relationship type, value, source with locator and proposed status. For a
 relationship, specify direction and participants. If either is unclear, retain
 an open question as a lead instead of drawing a concrete tree edge.
+Keep the wording that identifies each participant. An omitted possessor in
+"the photograph is with a cousin" does not by itself identify whose cousin;
+preserve the custodian and the open participant, labeling a possible reading
+as inference. In "with my cousin Olga", the narrator and Olga are explicit:
+preserve that proposed relationship rather than dropping it as uncertain.
 
 Preserve the original precision of dates, places, counts and names. Do not turn
 "after the war" into a year or an approximate date into an exact one. Label

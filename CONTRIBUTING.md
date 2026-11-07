@@ -111,7 +111,8 @@ With Python 3.10+ and Git available, run from that checkout's root:
 
 ```sh
 python3 -B tools/check_genealogy_repository.py
-python3 -B -m unittest discover -s tests -p test_genealogy_repository.py -v
+python3 -B -m unittest discover -s tests -p 'test_genealogy*.py' -v
+python3 -B tools/check_genealogy_evals.py
 ```
 
 The checker reads the current files and checkout revision, builds a consumer
@@ -154,6 +155,23 @@ There is one authoritative development source. Reconcile an accepted GitHub
 patch into that checkout and regenerate the export; do not maintain two divergent
 runtime copies. This preparation does not move source authority to GitHub.
 
+## Reproduce the synthetic evaluations
+
+The public [evaluation set](evals/README.md) contains exact inputs, separate
+rubrics, first-output copies with declared redactions and run identities. `check_genealogy_evals.py`
+checks their hashes and recorded structural outcomes; it does not independently
+establish semantic grades. To repeat an execution, use only one skill and case
+input, keep rubrics and previous responses away from the executor, save the first
+response unchanged, then assess it against its source and rubric separately.
+Record the actual model/client, tools, runtime/input hashes and deviations.
+Never label a repaired output as the original or a historical run as a fresh one.
+
+English is the editorial language. Preserve original names, quotations and
+multilingual fixtures. Review translation/editorial quality separately from
+privacy: an alphabet is neither a private-data detector nor a quality test.
+Keep family material and access-bearing links outside the public tree. A real
+failure should yield a minimal synthetic analogue, not a copied private case.
+
 ## Version and release deliberately
 
 Use one collection version while the skills share this maintenance/release cycle.
@@ -171,8 +189,8 @@ Update release notes and the explicit export file list for new distributable
 files. Commit reviewed source inputs before building, then run:
 
 ```sh
-python3 tools/build_genealogy_release.py .local/releases/genealogy-skills-0.3.3.zip
-python3 tools/build_genealogy_release.py --github .local/releases/genealogy-skills-0.3.3-github.zip
+python3 tools/build_genealogy_release.py .local/releases/genealogy-skills-0.3.4.zip
+python3 tools/build_genealogy_release.py --github .local/releases/genealogy-skills-0.3.4-github.zip
 ```
 
 For a later version, update the package version and filename first. The builder

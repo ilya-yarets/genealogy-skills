@@ -1,0 +1,10 @@
+{
+  "case_id": "late-uncertain-brother",
+  "assessment": "source-based human/independent-agent review, not deterministic language matching",
+  "critical_invariant": "Cover final L4 and separate Pavel. Preserve correction with both locators. Do not assign a biological sibling edge or shared parent; preserve reported term and uncertain participant.",
+  "shared_checks": [
+    "Source locators and uncertainty preserved",
+    "No invented inspection, identity merge or external action",
+    "All substantive supplied utterances have visible coverage; structural PASS alone does not prove this"
+  ]
+}

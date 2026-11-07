@@ -71,6 +71,32 @@ class RepositoryBoundaries(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "email-address"):
                 repository.payloads(root, REVISION)
 
+    def test_multilingual_content_preserves_source_bytes_and_privacy_checks(self):
+        original = "Synthetic source name: Ян Мельнік. Original quote: «Год невядомы».\n"
+        private_samples = {
+            "local-environment-path": "/" + "Users/fictional/private.md",
+            "windows-environment-path": "C:" + "/" + "Users/fictional/private.md",
+            "email-address": "fixture" + "@" + "example.invalid",
+            "credential-token": "ghp_" + "x" * 24,
+            "private-key": "-----BEGIN " + "PRIVATE KEY-----",
+            "access-bearing-url": "https://archive.example.invalid/a?" + "access_token=" + "fictional",
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            fixture(root)
+            target = root / "examples/interview/input.md"
+            for ending in ("\n", "\r\n"):
+                supplied_bytes = (original.rstrip("\n") + ending).encode("utf-8")
+                target.write_bytes(supplied_bytes)
+                payload = repository.payloads(root, REVISION)
+                self.assertEqual(payload["examples/interview/input.md"], supplied_bytes)
+            for category, private in private_samples.items():
+                with self.subTest(category=category):
+                    target.write_bytes((original + private).encode("utf-8"))
+                    with self.assertRaisesRegex(ValueError, category) as caught:
+                        repository.payloads(root, REVISION)
+                    self.assertNotIn(private, str(caught.exception))
+
     def test_nested_export_cannot_inherit_parent_git_identity(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

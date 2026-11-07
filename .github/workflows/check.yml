@@ -34,5 +34,7 @@ jobs:
           python-version: ${{ matrix.python }}
       - name: Check clean source and staged release
         run: python -B tools/check_genealogy_repository.py
-      - name: Test repository boundaries
-        run: python -B -m unittest discover -s tests -p test_genealogy_repository.py -v
+      - name: Test repository boundaries and handoff references
+        run: python -B -m unittest discover -s tests -p 'test_genealogy*.py' -v
+      - name: Check preserved evaluation evidence
+        run: python -B tools/check_genealogy_evals.py
