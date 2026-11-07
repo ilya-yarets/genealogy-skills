@@ -1,0 +1,10 @@
+{
+  "case_id": "child-position",
+  "assessment": "source-based human/independent-agent review, not deterministic language matching",
+  "critical_invariant": "Three children, two distinct Peters. Name the existing third position; do not create a fourth child or merge the Peters.",
+  "shared_checks": [
+    "Source locators and uncertainty preserved",
+    "No invented inspection, identity merge or external action",
+    "All substantive supplied utterances have visible coverage; structural PASS alone does not prove this"
+  ]
+}

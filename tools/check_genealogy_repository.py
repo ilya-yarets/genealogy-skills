@@ -22,6 +22,7 @@ SUPPORT_FILES = {
     ".github/workflows/check.yml", ".gitignore", ".gitattributes",
     "tools/check_genealogy_repository.py", "tools/check_genealogy_release.py",
     "tests/test_genealogy_repository.py",
+    "tests/test_genealogy_handoff_references.py", "tests/test_genealogy_evals.py",
 }
 
 

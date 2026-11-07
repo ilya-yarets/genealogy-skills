@@ -1,0 +1,10 @@
+{
+  "case_id": "notebook-custody",
+  "assessment": "source-based human/independent-agent review, not deterministic language matching",
+  "critical_invariant": "Custody does not establish authorship or sight of original. The number 1902 must not silently become a verified birth year; preserve the description and ambiguity.",
+  "shared_checks": [
+    "Source locators and uncertainty preserved",
+    "No invented inspection, identity merge or external action",
+    "All substantive supplied utterances have visible coverage; structural PASS alone does not prove this"
+  ]
+}

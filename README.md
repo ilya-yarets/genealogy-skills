@@ -4,14 +4,15 @@ A family of independent AI agent skills for collecting family testimony,
 researching records and reviewing genealogical evidence. Start with one task
 or carry a source-linked result from one skill to the next.
 
-**Version 0.3.3 · English instructions · MIT · By Illia Yarats**
+**Version 0.3.4 candidate · English instructions · MIT · By Illia Yarats**
 
 [Project repository](https://github.com/ilya-yarets/genealogy-skills) ·
 [Release downloads](https://github.com/ilya-yarets/genealogy-skills/releases) ·
 [Report an issue](https://github.com/ilya-yarets/genealogy-skills/issues)
 
-The development source is available on
+The public source baseline is available on
 [`main`](https://github.com/ilya-yarets/genealogy-skills/tree/main).
+This 0.3.4 candidate is prepared for review; the version on main may differ.
 No tagged release has been issued.
 
 These are instruction folders for an AI agent, not a family-tree application.
@@ -34,8 +35,8 @@ Each skill keeps its own instructions, references and license and works without
 installing the other two.
 
 The methods are region-independent; source selection depends on historical
-jurisdiction, language and available access. No regional archive database is included. Instructions
-and examples are in English; you may ask for an answer in your preferred language.
+jurisdiction, language and available access. No regional archive database is included. Editorial instructions are in English; synthetic evaluations also preserve original
+Russian text. You may ask for an answer in your preferred language.
 Keep source quotations in their original form, with a clearly labeled translation
 when useful.
 
@@ -204,14 +205,19 @@ On Windows, use `py -3` instead of `python3` if appropriate for your installatio
 The package check verifies its manifest, file set, local links, licenses and
 all six example JSON files. The handoff validator can also check your own JSON file. A PASS
 checks structure and integrity, not historical truth, model quality or permission
-to import. Checksums detect changes; they are not a signed authenticity guarantee.
+to import. An empty `coverage` list remains valid in v1; a nonempty list also does
+not prove completeness against the input. Version 0.3.4 rejects invalid typed
+references and missing participants in documented binary relationships. If an old
+handoff now fails, correct its source-backed links or preserve an unresolved
+kinship mention as a lead; do not invent a participant to obtain PASS. Checksums detect changes; they are not a signed authenticity guarantee.
 
 A **GitHub source checkout** has CI files and editable sources rather than a
 frozen release manifest. From its root, run:
 
 ```sh
 python3 -B tools/check_genealogy_repository.py
-python3 -B -m unittest discover -s tests -p test_genealogy_repository.py -v
+python3 -B -m unittest discover -s tests -p 'test_genealogy*.py' -v
+python3 -B tools/check_genealogy_evals.py
 ```
 
 The source checker creates a temporary consumer package, verifies it and removes
@@ -231,7 +237,9 @@ Local packaging and schema checks are recorded in the source project. Earlier
 synthetic executions used Russian instructions. Version 0.3.1 also received
 three small English explicit-invocation checks and a fresh research recheck
 after clarifying coverage target IDs. Versions 0.3.2 and 0.3.3 retain exactly those
-runtime instructions. The 0.3.2 end-to-end example is authored teaching material, checked
+runtime instructions. Version 0.3.4 adds a focused participant-attribution rule and
+[eight paired synthetic cases](evals/README.md), with first-output copies, declared path-only redactions,
+separate rubrics and recorded limitations. The 0.3.2 end-to-end example is authored teaching material, checked
 for structure and continuity; it is not a new multi-agent execution. The initial
 structural failure remains in the source project. These limited observations
 are not a reliability percentage. Clean installation, automatic skill selection,
@@ -267,7 +275,9 @@ The included instructions, code and synthetic examples are under the
 license when copied independently. See [notices](THIRD_PARTY_NOTICES.md) for
 external references and excluded historical test material.
 
-The original evaluation responses, including failures, remain unchanged in the
+The new synthetic first-output copies (with declared local-path redactions) and
+imported unchanged known failure are preserved
+in [evals](evals/README.md). Earlier evaluation responses, including failures, remain unchanged in the
 source project. The concise English examples are labeled editorial adaptations,
 not replacement test answers. This collection excludes the mixed source
 repository's Git history, unrelated skills, private files and historical archive

@@ -30,6 +30,8 @@ SCOPE_FILES = {
     "tools/build_genealogy_release.py", "tools/verify_genealogy_package.py",
     "tests/test_genealogy_package.py",
     "tools/check_genealogy_repository.py", "tests/test_genealogy_repository.py",
+    "tools/check_genealogy_evals.py", "tests/test_genealogy_evals.py",
+    "tests/test_genealogy_handoff_references.py",
 }
 BLOCKED_PARTS = {
     ".git", ".local", ".venv", "source-cache", "__pycache__", "dist", "build",

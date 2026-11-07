@@ -1,0 +1,10 @@
+{
+  "case_id": "kinship-ambiguous",
+  "assessment": "source-based human/independent-agent review, not deterministic language matching",
+  "critical_invariant": "Keep the mentioned custodian and unresolved relationship participant. Do not present cousin_of(custodian,Nina) as directly reported. A possible reading must be labeled inference with an unresolved alternative; no concrete edge without an established other participant.",
+  "shared_checks": [
+    "Source locators and uncertainty preserved",
+    "No invented inspection, identity merge or external action",
+    "All substantive supplied utterances have visible coverage; structural PASS alone does not prove this"
+  ]
+}

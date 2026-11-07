@@ -1,0 +1,15 @@
+{
+  "origin": "user-supplied independent review, Appendix C; imported, not executed here",
+  "review_date": "2026-11-06 America/Denver",
+  "baseline_public_commit": "1efd6839e07076660799df3f8168a82b3f2cb8eb",
+  "skill_version": "0.3.3",
+  "model": "not recorded in supplied review",
+  "conditions": "One synthetic execution; output-limit interruption and continuation; no no-skill control. Input context is a reconstruction; quoted transcript is verbatim according to review.",
+  "input": "appendix-c.input.md",
+  "output": "appendix-c.initial.json",
+  "output_sha256": "5a829b449704f5c031947be10203a54c6dc53d96ef4d0d07c69e65855cbfbe11",
+  "output_bytes": 74199,
+  "structural_assessment": "passed original v0.3.3 validator; structure alone cannot detect attribution error",
+  "semantic_assessment": "known failure: P9/C24 attributes an unspecified cousin to Nina as direct oral testimony; preserve unchanged",
+  "privacy": "Entire case explicitly synthetic; no family archive material used."
+}

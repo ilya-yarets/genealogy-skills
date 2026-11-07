@@ -1,4 +1,10 @@
-"""Verify an extracted English genealogy release, without installing anything."""
+"""Verify an extracted genealogy release, without installing anything.
+
+English is the editorial language, checked during content review. Original names,
+quotations and synthetic multilingual inputs retain their source writing. An
+alphabet test cannot establish translation quality or the absence of private data;
+the source collector and release builder perform separate privacy-pattern checks.
+"""
 
 import argparse
 import hashlib
@@ -17,12 +23,21 @@ except ImportError:
     from validate_genealogy_handoff import validate
 
 
-VERSION = "0.3.3"
+VERSION = "0.3.4"
 SKILLS = ("genealogy-researcher", "family-interview-to-tree", "genealogy-evidence-review")
 CASES = ("research", "interview", "evidence-review")
 WORKFLOW_STEPS = ("01-interview", "02-research", "03-review")
 JSON_EXAMPLES = (tuple(f"examples/{case}/result.json" for case in CASES)
                  + tuple(f"examples/workflow/{step}-result.json" for step in WORKFLOW_STEPS))
+EVAL_CASES = ("kinship-ambiguous", "kinship-explicit", "notebook-custody", "notebook-authorship",
+              "child-position", "late-uncertain-brother", "case-isolation", "document-command")
+EVAL_FILES = ({"evals/README.md", "evals/RUNS.json", "evals/ASSESSMENT.json",
+               "evals/history/appendix-c.input.md", "evals/history/appendix-c.initial.json",
+               "evals/history/provenance.json", "tools/check_genealogy_evals.py"}
+              | {f"evals/cases/{case}.md" for case in EVAL_CASES}
+              | {f"evals/rubrics/{case}.json" for case in EVAL_CASES}
+              | {f"evals/runs/{variant}/{case}.json" for case in EVAL_CASES
+                 for variant in ("baseline", "candidate")})
 COMMON = ("SKILL.md", "LICENSE", "agents/openai.yaml", "references/handoff-format.md", "references/task-context.md")
 ROOT_FILES = ("README.md", "CONTRIBUTING.md", "CHANGELOG.md", "THIRD_PARTY_NOTICES.md", "LICENSE", "RELEASE.json",
               "tools/validate_genealogy_handoff.py", "tools/verify_genealogy_package.py",
@@ -30,7 +45,7 @@ ROOT_FILES = ("README.md", "CONTRIBUTING.md", "CHANGELOG.md", "THIRD_PARTY_NOTIC
 
 
 def expected_files():
-    return (set(ROOT_FILES)
+    return (set(ROOT_FILES) | EVAL_FILES
             | {f"skills/{skill}/{name}" for skill in SKILLS for name in COMMON}
             | {"skills/genealogy-researcher/references/research-sheet.md"}
             | {f"examples/{case}/{name}" for case in CASES for name in ("input.md", "result.md", "result.json")}
@@ -53,11 +68,12 @@ def release_identity(revision):
         "language": "en",
         "status": "prepared-candidate",
         "examples": "editorial; not original evaluation outputs",
+        "evaluations": "synthetic first-output copies with declared redactions and separate assessments; see evals/README.md",
     }, indent=2) + "\n").encode()
 
 
 def verify(root):
-    """Check strict contents, hashes, English text, references and example structure."""
+    """Check strict contents, hashes, UTF-8 text, references and example structure."""
     root = Path(root).resolve()
     errors = []
     actual = set()
@@ -92,8 +108,6 @@ def verify(root):
         except UnicodeDecodeError:
             errors.append(f"{name}: non-UTF-8 content")
             continue
-        if re.search(r"[\u0400-\u04ff]", body):
-            errors.append(f"{name}: untranslated Cyrillic content")
         if name.endswith(".md"):
             for url in re.findall(r"\]\(([^)]+)\)", body):
                 if url.startswith(("https://", "http://", "#")):

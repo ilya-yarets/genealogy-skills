@@ -1,0 +1,467 @@
+{
+  "record_format": "genealogy-evaluation-record-1",
+  "date": "2026-11-06",
+  "timezone": "America/Denver",
+  "host": "Codex desktop delegated agents; exact client version unavailable",
+  "model": "inherited session model; provider identifier unavailable to executors",
+  "baseline_public_commit": "1efd6839e07076660799df3f8168a82b3f2cb8eb",
+  "candidate_source_base_commit": "133be3a33d11ba02c4608f6b1d98bc1359052a42",
+  "candidate_identity": "Modified working candidate from source base, frozen before execution. Exact runtime hashes below match the delivered skill; artifact source SHA is in RELEASE.json.",
+  "execution": "Two fresh contexts, one per variant, each executing all eight cases separately in one context. Only that standalone skill and supplied cases; no rubrics, prior outputs, validators, repairs, network or real tree. Standard-library serialization wrote first JSON deliveries unchanged. Both executors were additionally asked to keep responses focused and save progressively.",
+  "limits": "Explicit invocation, small Russian synthetic cases, shared per-variant context, unpinned model, no no-skill control, no installation/discovery or statistical claim.",
+  "runs": [
+    {
+      "case_id": "kinship-ambiguous",
+      "variant": "baseline",
+      "run_id": "2026-11-06-baseline-kinship-ambiguous",
+      "collection_version": "0.3.3",
+      "skill": "family-interview-to-tree",
+      "skill_files_sha256": {
+        "skills/family-interview-to-tree/LICENSE": "d42e79cf052ea5c1f3a187f392fbc661d9842d3768df6d3b6a425c33bc9465d2",
+        "skills/family-interview-to-tree/SKILL.md": "c5d730773641ac4ce722edd9a2a2f31876bc303b19f365b0e5a994b3d44d5d52",
+        "skills/family-interview-to-tree/references/task-context.md": "f8b0a4aabd155c1af9146f895887d3691385d8bfe9099252c65b0e86f37460f1",
+        "skills/family-interview-to-tree/references/handoff-format.md": "54f243b9a39b4f23a9bb88a5cec73d7b90abc4550842f810acfa81f2b28294fa",
+        "skills/family-interview-to-tree/agents/openai.yaml": "e3d2017bb6742696e8851bfa807ed575aee3cdb8e3a503d1ac53a55dd69946fc"
+      },
+      "structural_errors": [],
+      "input": "evals/cases/kinship-ambiguous.md",
+      "input_sha256": "b7be402fb815692b1b3c0d421e53aa2fd970ea7f6a3e60d17008149e9b7145cc",
+      "output": "evals/runs/baseline/kinship-ambiguous.json",
+      "output_sha256": "9c97fbf764b3a40d7b75033bf7262ad5fd98e3af01cbfb6cdfeb0e6cc58557ef",
+      "rubric": "evals/rubrics/kinship-ambiguous.json",
+      "rubric_sha256": "42d666d1acdb5d33943c987e5bd0f9603b1dbe8ce150853d4aa6d1f25bb6ed78",
+      "original_output_sha256": "bfc100fba839bd1ac24d05194a1b593e8b944d3ff4b1a3ef38e175966c6a9ec4",
+      "public_copy_transform": {
+        "kind": "path-only-redaction",
+        "description": "Removed an absolute local release-root prefix from source/context locators; retained relative evals/cases paths. No genealogical content, IDs, statuses or assessments repaired.",
+        "occurrences": 1,
+        "original_in_public_package": false
+      }
+    },
+    {
+      "case_id": "kinship-explicit",
+      "variant": "baseline",
+      "run_id": "2026-11-06-baseline-kinship-explicit",
+      "collection_version": "0.3.3",
+      "skill": "family-interview-to-tree",
+      "skill_files_sha256": {
+        "skills/family-interview-to-tree/LICENSE": "d42e79cf052ea5c1f3a187f392fbc661d9842d3768df6d3b6a425c33bc9465d2",
+        "skills/family-interview-to-tree/SKILL.md": "c5d730773641ac4ce722edd9a2a2f31876bc303b19f365b0e5a994b3d44d5d52",
+        "skills/family-interview-to-tree/references/task-context.md": "f8b0a4aabd155c1af9146f895887d3691385d8bfe9099252c65b0e86f37460f1",
+        "skills/family-interview-to-tree/references/handoff-format.md": "54f243b9a39b4f23a9bb88a5cec73d7b90abc4550842f810acfa81f2b28294fa",
+        "skills/family-interview-to-tree/agents/openai.yaml": "e3d2017bb6742696e8851bfa807ed575aee3cdb8e3a503d1ac53a55dd69946fc"
+      },
+      "structural_errors": [],
+      "input": "evals/cases/kinship-explicit.md",
+      "input_sha256": "3ffaeebaf3e0a12bf1eab46e46bc2c7e556fcb5ce50ff3a75f9b534b6d292eb7",
+      "output": "evals/runs/baseline/kinship-explicit.json",
+      "output_sha256": "4fa6c5519cf7c64a6248aea8c9e62c8227e1c15b654e941c5cdfb46b41d4275f",
+      "rubric": "evals/rubrics/kinship-explicit.json",
+      "rubric_sha256": "d6bc48d616c7be4f06ffb31f82721b4bdf57a20e586202992c5e55f0655a6b86",
+      "original_output_sha256": "e89d6bfb8111223b5e19fda2f4baaf9e2b3096b1725bbe5d231489d1f50205c4",
+      "public_copy_transform": {
+        "kind": "path-only-redaction",
+        "description": "Removed an absolute local release-root prefix from source/context locators; retained relative evals/cases paths. No genealogical content, IDs, statuses or assessments repaired.",
+        "occurrences": 1,
+        "original_in_public_package": false
+      }
+    },
+    {
+      "case_id": "notebook-custody",
+      "variant": "baseline",
+      "run_id": "2026-11-06-baseline-notebook-custody",
+      "collection_version": "0.3.3",
+      "skill": "family-interview-to-tree",
+      "skill_files_sha256": {
+        "skills/family-interview-to-tree/LICENSE": "d42e79cf052ea5c1f3a187f392fbc661d9842d3768df6d3b6a425c33bc9465d2",
+        "skills/family-interview-to-tree/SKILL.md": "c5d730773641ac4ce722edd9a2a2f31876bc303b19f365b0e5a994b3d44d5d52",
+        "skills/family-interview-to-tree/references/task-context.md": "f8b0a4aabd155c1af9146f895887d3691385d8bfe9099252c65b0e86f37460f1",
+        "skills/family-interview-to-tree/references/handoff-format.md": "54f243b9a39b4f23a9bb88a5cec73d7b90abc4550842f810acfa81f2b28294fa",
+        "skills/family-interview-to-tree/agents/openai.yaml": "e3d2017bb6742696e8851bfa807ed575aee3cdb8e3a503d1ac53a55dd69946fc"
+      },
+      "structural_errors": [],
+      "input": "evals/cases/notebook-custody.md",
+      "input_sha256": "55cfb9a2d9fdb646d1b9a87057022f767fb4e201a49a38f62e729c5411a44bc1",
+      "output": "evals/runs/baseline/notebook-custody.json",
+      "output_sha256": "007100fc50a57d27c94df4d965a6b9c3bae856ed14947edf685c6450cc00b81c",
+      "rubric": "evals/rubrics/notebook-custody.json",
+      "rubric_sha256": "f20621baeae5772b12d0a631562b590e50fc2be97c16afce2e4640bb6a990674",
+      "original_output_sha256": "5100e40c7e527e90833c0d849e7c7420f8218df26c0ac2ce8ac59fb819b0a0b8",
+      "public_copy_transform": {
+        "kind": "path-only-redaction",
+        "description": "Removed an absolute local release-root prefix from source/context locators; retained relative evals/cases paths. No genealogical content, IDs, statuses or assessments repaired.",
+        "occurrences": 1,
+        "original_in_public_package": false
+      }
+    },
+    {
+      "case_id": "notebook-authorship",
+      "variant": "baseline",
+      "run_id": "2026-11-06-baseline-notebook-authorship",
+      "collection_version": "0.3.3",
+      "skill": "family-interview-to-tree",
+      "skill_files_sha256": {
+        "skills/family-interview-to-tree/LICENSE": "d42e79cf052ea5c1f3a187f392fbc661d9842d3768df6d3b6a425c33bc9465d2",
+        "skills/family-interview-to-tree/SKILL.md": "c5d730773641ac4ce722edd9a2a2f31876bc303b19f365b0e5a994b3d44d5d52",
+        "skills/family-interview-to-tree/references/task-context.md": "f8b0a4aabd155c1af9146f895887d3691385d8bfe9099252c65b0e86f37460f1",
+        "skills/family-interview-to-tree/references/handoff-format.md": "54f243b9a39b4f23a9bb88a5cec73d7b90abc4550842f810acfa81f2b28294fa",
+        "skills/family-interview-to-tree/agents/openai.yaml": "e3d2017bb6742696e8851bfa807ed575aee3cdb8e3a503d1ac53a55dd69946fc"
+      },
+      "structural_errors": [],
+      "input": "evals/cases/notebook-authorship.md",
+      "input_sha256": "65c3e1612d21cc0d744d8b9e310f83cf5a38ce710b7fdeb0a7cbe0ac641f7170",
+      "output": "evals/runs/baseline/notebook-authorship.json",
+      "output_sha256": "022261205c76d07a4dae41122abdc14647621a435ecfceb63158c6ea8305ab5f",
+      "rubric": "evals/rubrics/notebook-authorship.json",
+      "rubric_sha256": "df50f06cd2a88c5b28cc9277f151d313533887bf36694822003d9c25a72722f2",
+      "original_output_sha256": "a5ced99125aa2742b59731955381498470a05353bcc099b435cc6d9ae1621736",
+      "public_copy_transform": {
+        "kind": "path-only-redaction",
+        "description": "Removed an absolute local release-root prefix from source/context locators; retained relative evals/cases paths. No genealogical content, IDs, statuses or assessments repaired.",
+        "occurrences": 1,
+        "original_in_public_package": false
+      }
+    },
+    {
+      "case_id": "child-position",
+      "variant": "baseline",
+      "run_id": "2026-11-06-baseline-child-position",
+      "collection_version": "0.3.3",
+      "skill": "family-interview-to-tree",
+      "skill_files_sha256": {
+        "skills/family-interview-to-tree/LICENSE": "d42e79cf052ea5c1f3a187f392fbc661d9842d3768df6d3b6a425c33bc9465d2",
+        "skills/family-interview-to-tree/SKILL.md": "c5d730773641ac4ce722edd9a2a2f31876bc303b19f365b0e5a994b3d44d5d52",
+        "skills/family-interview-to-tree/references/task-context.md": "f8b0a4aabd155c1af9146f895887d3691385d8bfe9099252c65b0e86f37460f1",
+        "skills/family-interview-to-tree/references/handoff-format.md": "54f243b9a39b4f23a9bb88a5cec73d7b90abc4550842f810acfa81f2b28294fa",
+        "skills/family-interview-to-tree/agents/openai.yaml": "e3d2017bb6742696e8851bfa807ed575aee3cdb8e3a503d1ac53a55dd69946fc"
+      },
+      "structural_errors": [],
+      "input": "evals/cases/child-position.md",
+      "input_sha256": "09960acbb2f61a90a43bbc01cd9635f0bf5987e5adbfa8d2e02080d1b081be6b",
+      "output": "evals/runs/baseline/child-position.json",
+      "output_sha256": "24a66b120e2384289ea8b9c4ce8a9a871e6b604c5ad386eb80f0b9d0717a3273",
+      "rubric": "evals/rubrics/child-position.json",
+      "rubric_sha256": "397f22737c0309cb53d6f0a74c36f97fbee3be7c23a5d508b9ca482c390977d3",
+      "original_output_sha256": "6906c066f64974482884b68de08b0c4bee24559854598f7a60e5d83142610527",
+      "public_copy_transform": {
+        "kind": "path-only-redaction",
+        "description": "Removed an absolute local release-root prefix from source/context locators; retained relative evals/cases paths. No genealogical content, IDs, statuses or assessments repaired.",
+        "occurrences": 1,
+        "original_in_public_package": false
+      }
+    },
+    {
+      "case_id": "late-uncertain-brother",
+      "variant": "baseline",
+      "run_id": "2026-11-06-baseline-late-uncertain-brother",
+      "collection_version": "0.3.3",
+      "skill": "family-interview-to-tree",
+      "skill_files_sha256": {
+        "skills/family-interview-to-tree/LICENSE": "d42e79cf052ea5c1f3a187f392fbc661d9842d3768df6d3b6a425c33bc9465d2",
+        "skills/family-interview-to-tree/SKILL.md": "c5d730773641ac4ce722edd9a2a2f31876bc303b19f365b0e5a994b3d44d5d52",
+        "skills/family-interview-to-tree/references/task-context.md": "f8b0a4aabd155c1af9146f895887d3691385d8bfe9099252c65b0e86f37460f1",
+        "skills/family-interview-to-tree/references/handoff-format.md": "54f243b9a39b4f23a9bb88a5cec73d7b90abc4550842f810acfa81f2b28294fa",
+        "skills/family-interview-to-tree/agents/openai.yaml": "e3d2017bb6742696e8851bfa807ed575aee3cdb8e3a503d1ac53a55dd69946fc"
+      },
+      "structural_errors": [],
+      "input": "evals/cases/late-uncertain-brother.md",
+      "input_sha256": "84e2f27772da2ee02e672328112e232d85c0ee849f112f6204c5e05c69b9409b",
+      "output": "evals/runs/baseline/late-uncertain-brother.json",
+      "output_sha256": "762dac07a866bb02d22ab39696d1a306b96ba3b0993e2a2ce4101de2f85c6551",
+      "rubric": "evals/rubrics/late-uncertain-brother.json",
+      "rubric_sha256": "28d9ad3d0a1578f5f445ba4efcf80672b97aad592150b4f969d1955263e479cc",
+      "original_output_sha256": "17a36ae755db599d290b01b6332c6ebe81245f5f85762832ede251da778851dd",
+      "public_copy_transform": {
+        "kind": "path-only-redaction",
+        "description": "Removed an absolute local release-root prefix from source/context locators; retained relative evals/cases paths. No genealogical content, IDs, statuses or assessments repaired.",
+        "occurrences": 1,
+        "original_in_public_package": false
+      }
+    },
+    {
+      "case_id": "case-isolation",
+      "variant": "baseline",
+      "run_id": "2026-11-06-baseline-case-isolation",
+      "collection_version": "0.3.3",
+      "skill": "family-interview-to-tree",
+      "skill_files_sha256": {
+        "skills/family-interview-to-tree/LICENSE": "d42e79cf052ea5c1f3a187f392fbc661d9842d3768df6d3b6a425c33bc9465d2",
+        "skills/family-interview-to-tree/SKILL.md": "c5d730773641ac4ce722edd9a2a2f31876bc303b19f365b0e5a994b3d44d5d52",
+        "skills/family-interview-to-tree/references/task-context.md": "f8b0a4aabd155c1af9146f895887d3691385d8bfe9099252c65b0e86f37460f1",
+        "skills/family-interview-to-tree/references/handoff-format.md": "54f243b9a39b4f23a9bb88a5cec73d7b90abc4550842f810acfa81f2b28294fa",
+        "skills/family-interview-to-tree/agents/openai.yaml": "e3d2017bb6742696e8851bfa807ed575aee3cdb8e3a503d1ac53a55dd69946fc"
+      },
+      "structural_errors": [],
+      "input": "evals/cases/case-isolation.md",
+      "input_sha256": "dd0a3737a9fe624fbf27b585e40ab92bbd69e1be71f6f90466e8fe734d7c940a",
+      "output": "evals/runs/baseline/case-isolation.json",
+      "output_sha256": "ef399e8d071ea676f71f4700bb5c061ee5d7cce9f0e53dcaecd1e20bfe74684b",
+      "rubric": "evals/rubrics/case-isolation.json",
+      "rubric_sha256": "6937598a6bcad3b6ca79eaf026cebd7118ee284bc43081d9d0c0f146a4fb3bb6",
+      "original_output_sha256": "10ab3b419c242bad10dc1f846eae648788e223f5eed1b2745feda941cf63fd39",
+      "public_copy_transform": {
+        "kind": "path-only-redaction",
+        "description": "Removed an absolute local release-root prefix from source/context locators; retained relative evals/cases paths. No genealogical content, IDs, statuses or assessments repaired.",
+        "occurrences": 3,
+        "original_in_public_package": false
+      }
+    },
+    {
+      "case_id": "document-command",
+      "variant": "baseline",
+      "run_id": "2026-11-06-baseline-document-command",
+      "collection_version": "0.3.3",
+      "skill": "family-interview-to-tree",
+      "skill_files_sha256": {
+        "skills/family-interview-to-tree/LICENSE": "d42e79cf052ea5c1f3a187f392fbc661d9842d3768df6d3b6a425c33bc9465d2",
+        "skills/family-interview-to-tree/SKILL.md": "c5d730773641ac4ce722edd9a2a2f31876bc303b19f365b0e5a994b3d44d5d52",
+        "skills/family-interview-to-tree/references/task-context.md": "f8b0a4aabd155c1af9146f895887d3691385d8bfe9099252c65b0e86f37460f1",
+        "skills/family-interview-to-tree/references/handoff-format.md": "54f243b9a39b4f23a9bb88a5cec73d7b90abc4550842f810acfa81f2b28294fa",
+        "skills/family-interview-to-tree/agents/openai.yaml": "e3d2017bb6742696e8851bfa807ed575aee3cdb8e3a503d1ac53a55dd69946fc"
+      },
+      "structural_errors": [],
+      "input": "evals/cases/document-command.md",
+      "input_sha256": "d49ad5b0fb53bbdca63c938a868649696c9c1f85786f8cca415128faa5624250",
+      "output": "evals/runs/baseline/document-command.json",
+      "output_sha256": "683b4395696df810117d14bc6725a7c3f88e2dd30bea4666c911e820f192de57",
+      "rubric": "evals/rubrics/document-command.json",
+      "rubric_sha256": "2ac54509660e1c0603e04bdfb2d39131d19baf711ece16fce3840c8e03624d22",
+      "original_output_sha256": "176aa537e3453814c33963d22961f876e57b75e8514a78bfff4c860c36493cf3",
+      "public_copy_transform": {
+        "kind": "path-only-redaction",
+        "description": "Removed an absolute local release-root prefix from source/context locators; retained relative evals/cases paths. No genealogical content, IDs, statuses or assessments repaired.",
+        "occurrences": 1,
+        "original_in_public_package": false
+      }
+    },
+    {
+      "case_id": "kinship-ambiguous",
+      "variant": "candidate",
+      "run_id": "2026-11-06-candidate-kinship-ambiguous",
+      "collection_version": "0.3.4-candidate",
+      "skill": "family-interview-to-tree",
+      "skill_files_sha256": {
+        "skills/family-interview-to-tree/LICENSE": "d42e79cf052ea5c1f3a187f392fbc661d9842d3768df6d3b6a425c33bc9465d2",
+        "skills/family-interview-to-tree/SKILL.md": "f8cd35bcb34040ca305be358245f152fef085d2e33d1073d591ed6042abc1ab2",
+        "skills/family-interview-to-tree/references/task-context.md": "f8b0a4aabd155c1af9146f895887d3691385d8bfe9099252c65b0e86f37460f1",
+        "skills/family-interview-to-tree/references/handoff-format.md": "0fee55822de10308e6ad0277310ab7d162a5a42c24311752638e2e0512aa0c39",
+        "skills/family-interview-to-tree/agents/openai.yaml": "e3d2017bb6742696e8851bfa807ed575aee3cdb8e3a503d1ac53a55dd69946fc"
+      },
+      "structural_errors": [],
+      "input": "evals/cases/kinship-ambiguous.md",
+      "input_sha256": "b7be402fb815692b1b3c0d421e53aa2fd970ea7f6a3e60d17008149e9b7145cc",
+      "output": "evals/runs/candidate/kinship-ambiguous.json",
+      "output_sha256": "1f61ed2627c3bc74220dd150b84f879fbe14105673bc03f92d60db1a0d96853f",
+      "rubric": "evals/rubrics/kinship-ambiguous.json",
+      "rubric_sha256": "42d666d1acdb5d33943c987e5bd0f9603b1dbe8ce150853d4aa6d1f25bb6ed78",
+      "original_output_sha256": "9322b644130f1b66169d68d3efe73eaef9eccce9f82f77dd5526728088971003",
+      "public_copy_transform": {
+        "kind": "path-only-redaction",
+        "description": "Removed an absolute local release-root prefix from source/context locators; retained relative evals/cases paths. No genealogical content, IDs, statuses or assessments repaired.",
+        "occurrences": 1,
+        "original_in_public_package": false
+      }
+    },
+    {
+      "case_id": "kinship-explicit",
+      "variant": "candidate",
+      "run_id": "2026-11-06-candidate-kinship-explicit",
+      "collection_version": "0.3.4-candidate",
+      "skill": "family-interview-to-tree",
+      "skill_files_sha256": {
+        "skills/family-interview-to-tree/LICENSE": "d42e79cf052ea5c1f3a187f392fbc661d9842d3768df6d3b6a425c33bc9465d2",
+        "skills/family-interview-to-tree/SKILL.md": "f8cd35bcb34040ca305be358245f152fef085d2e33d1073d591ed6042abc1ab2",
+        "skills/family-interview-to-tree/references/task-context.md": "f8b0a4aabd155c1af9146f895887d3691385d8bfe9099252c65b0e86f37460f1",
+        "skills/family-interview-to-tree/references/handoff-format.md": "0fee55822de10308e6ad0277310ab7d162a5a42c24311752638e2e0512aa0c39",
+        "skills/family-interview-to-tree/agents/openai.yaml": "e3d2017bb6742696e8851bfa807ed575aee3cdb8e3a503d1ac53a55dd69946fc"
+      },
+      "structural_errors": [],
+      "input": "evals/cases/kinship-explicit.md",
+      "input_sha256": "3ffaeebaf3e0a12bf1eab46e46bc2c7e556fcb5ce50ff3a75f9b534b6d292eb7",
+      "output": "evals/runs/candidate/kinship-explicit.json",
+      "output_sha256": "75d8ee7c2120ae154ed942b46706d5a8d6e114f86b1e3b6be448f6c0529a40fd",
+      "rubric": "evals/rubrics/kinship-explicit.json",
+      "rubric_sha256": "d6bc48d616c7be4f06ffb31f82721b4bdf57a20e586202992c5e55f0655a6b86",
+      "original_output_sha256": "43be4260074b5144e3edf951280b6971ca0b3c98fad6043b503dca8053bca896",
+      "public_copy_transform": {
+        "kind": "path-only-redaction",
+        "description": "Removed an absolute local release-root prefix from source/context locators; retained relative evals/cases paths. No genealogical content, IDs, statuses or assessments repaired.",
+        "occurrences": 1,
+        "original_in_public_package": false
+      }
+    },
+    {
+      "case_id": "notebook-custody",
+      "variant": "candidate",
+      "run_id": "2026-11-06-candidate-notebook-custody",
+      "collection_version": "0.3.4-candidate",
+      "skill": "family-interview-to-tree",
+      "skill_files_sha256": {
+        "skills/family-interview-to-tree/LICENSE": "d42e79cf052ea5c1f3a187f392fbc661d9842d3768df6d3b6a425c33bc9465d2",
+        "skills/family-interview-to-tree/SKILL.md": "f8cd35bcb34040ca305be358245f152fef085d2e33d1073d591ed6042abc1ab2",
+        "skills/family-interview-to-tree/references/task-context.md": "f8b0a4aabd155c1af9146f895887d3691385d8bfe9099252c65b0e86f37460f1",
+        "skills/family-interview-to-tree/references/handoff-format.md": "0fee55822de10308e6ad0277310ab7d162a5a42c24311752638e2e0512aa0c39",
+        "skills/family-interview-to-tree/agents/openai.yaml": "e3d2017bb6742696e8851bfa807ed575aee3cdb8e3a503d1ac53a55dd69946fc"
+      },
+      "structural_errors": [],
+      "input": "evals/cases/notebook-custody.md",
+      "input_sha256": "55cfb9a2d9fdb646d1b9a87057022f767fb4e201a49a38f62e729c5411a44bc1",
+      "output": "evals/runs/candidate/notebook-custody.json",
+      "output_sha256": "1b0b30cd853dbec3a3f8ae1d60909229c31e6ed858aa5ff5b1745ce4987c363b",
+      "rubric": "evals/rubrics/notebook-custody.json",
+      "rubric_sha256": "f20621baeae5772b12d0a631562b590e50fc2be97c16afce2e4640bb6a990674",
+      "original_output_sha256": "3e75d626e17295820b41519df892bfaec95f02688c55d18e0130fbdc99b4fee1",
+      "public_copy_transform": {
+        "kind": "path-only-redaction",
+        "description": "Removed an absolute local release-root prefix from source/context locators; retained relative evals/cases paths. No genealogical content, IDs, statuses or assessments repaired.",
+        "occurrences": 1,
+        "original_in_public_package": false
+      }
+    },
+    {
+      "case_id": "notebook-authorship",
+      "variant": "candidate",
+      "run_id": "2026-11-06-candidate-notebook-authorship",
+      "collection_version": "0.3.4-candidate",
+      "skill": "family-interview-to-tree",
+      "skill_files_sha256": {
+        "skills/family-interview-to-tree/LICENSE": "d42e79cf052ea5c1f3a187f392fbc661d9842d3768df6d3b6a425c33bc9465d2",
+        "skills/family-interview-to-tree/SKILL.md": "f8cd35bcb34040ca305be358245f152fef085d2e33d1073d591ed6042abc1ab2",
+        "skills/family-interview-to-tree/references/task-context.md": "f8b0a4aabd155c1af9146f895887d3691385d8bfe9099252c65b0e86f37460f1",
+        "skills/family-interview-to-tree/references/handoff-format.md": "0fee55822de10308e6ad0277310ab7d162a5a42c24311752638e2e0512aa0c39",
+        "skills/family-interview-to-tree/agents/openai.yaml": "e3d2017bb6742696e8851bfa807ed575aee3cdb8e3a503d1ac53a55dd69946fc"
+      },
+      "structural_errors": [],
+      "input": "evals/cases/notebook-authorship.md",
+      "input_sha256": "65c3e1612d21cc0d744d8b9e310f83cf5a38ce710b7fdeb0a7cbe0ac641f7170",
+      "output": "evals/runs/candidate/notebook-authorship.json",
+      "output_sha256": "344a790e33d2a4a0590614a889cbf0d2ad0e4dec12ee3064f4f4d4c8f24eaa18",
+      "rubric": "evals/rubrics/notebook-authorship.json",
+      "rubric_sha256": "df50f06cd2a88c5b28cc9277f151d313533887bf36694822003d9c25a72722f2",
+      "original_output_sha256": "47888dce51b10a917bddd5c04940dec623be3cba0efe3be8cf7b71ad33027503",
+      "public_copy_transform": {
+        "kind": "path-only-redaction",
+        "description": "Removed an absolute local release-root prefix from source/context locators; retained relative evals/cases paths. No genealogical content, IDs, statuses or assessments repaired.",
+        "occurrences": 1,
+        "original_in_public_package": false
+      }
+    },
+    {
+      "case_id": "child-position",
+      "variant": "candidate",
+      "run_id": "2026-11-06-candidate-child-position",
+      "collection_version": "0.3.4-candidate",
+      "skill": "family-interview-to-tree",
+      "skill_files_sha256": {
+        "skills/family-interview-to-tree/LICENSE": "d42e79cf052ea5c1f3a187f392fbc661d9842d3768df6d3b6a425c33bc9465d2",
+        "skills/family-interview-to-tree/SKILL.md": "f8cd35bcb34040ca305be358245f152fef085d2e33d1073d591ed6042abc1ab2",
+        "skills/family-interview-to-tree/references/task-context.md": "f8b0a4aabd155c1af9146f895887d3691385d8bfe9099252c65b0e86f37460f1",
+        "skills/family-interview-to-tree/references/handoff-format.md": "0fee55822de10308e6ad0277310ab7d162a5a42c24311752638e2e0512aa0c39",
+        "skills/family-interview-to-tree/agents/openai.yaml": "e3d2017bb6742696e8851bfa807ed575aee3cdb8e3a503d1ac53a55dd69946fc"
+      },
+      "structural_errors": [],
+      "input": "evals/cases/child-position.md",
+      "input_sha256": "09960acbb2f61a90a43bbc01cd9635f0bf5987e5adbfa8d2e02080d1b081be6b",
+      "output": "evals/runs/candidate/child-position.json",
+      "output_sha256": "2da832d7c7fd8aa52cc74e66fe4103b3ace1c7957864efeee5c338b5cb666c26",
+      "rubric": "evals/rubrics/child-position.json",
+      "rubric_sha256": "397f22737c0309cb53d6f0a74c36f97fbee3be7c23a5d508b9ca482c390977d3",
+      "original_output_sha256": "3b560462d588948ab8dbe83b8f5ed1e87a3d68ec48ea78279ddcf084581102aa",
+      "public_copy_transform": {
+        "kind": "path-only-redaction",
+        "description": "Removed an absolute local release-root prefix from source/context locators; retained relative evals/cases paths. No genealogical content, IDs, statuses or assessments repaired.",
+        "occurrences": 1,
+        "original_in_public_package": false
+      }
+    },
+    {
+      "case_id": "late-uncertain-brother",
+      "variant": "candidate",
+      "run_id": "2026-11-06-candidate-late-uncertain-brother",
+      "collection_version": "0.3.4-candidate",
+      "skill": "family-interview-to-tree",
+      "skill_files_sha256": {
+        "skills/family-interview-to-tree/LICENSE": "d42e79cf052ea5c1f3a187f392fbc661d9842d3768df6d3b6a425c33bc9465d2",
+        "skills/family-interview-to-tree/SKILL.md": "f8cd35bcb34040ca305be358245f152fef085d2e33d1073d591ed6042abc1ab2",
+        "skills/family-interview-to-tree/references/task-context.md": "f8b0a4aabd155c1af9146f895887d3691385d8bfe9099252c65b0e86f37460f1",
+        "skills/family-interview-to-tree/references/handoff-format.md": "0fee55822de10308e6ad0277310ab7d162a5a42c24311752638e2e0512aa0c39",
+        "skills/family-interview-to-tree/agents/openai.yaml": "e3d2017bb6742696e8851bfa807ed575aee3cdb8e3a503d1ac53a55dd69946fc"
+      },
+      "structural_errors": [],
+      "input": "evals/cases/late-uncertain-brother.md",
+      "input_sha256": "84e2f27772da2ee02e672328112e232d85c0ee849f112f6204c5e05c69b9409b",
+      "output": "evals/runs/candidate/late-uncertain-brother.json",
+      "output_sha256": "6adee8026f43387e7d70542af0521f23b1401786f86cb74b6c4cbd0aca95bb50",
+      "rubric": "evals/rubrics/late-uncertain-brother.json",
+      "rubric_sha256": "28d9ad3d0a1578f5f445ba4efcf80672b97aad592150b4f969d1955263e479cc",
+      "original_output_sha256": "48de129f99d2311b5cab15ae1dd3b40dc1b5938b8f45b0bd5b9d0f7a33ba58ef",
+      "public_copy_transform": {
+        "kind": "path-only-redaction",
+        "description": "Removed an absolute local release-root prefix from source/context locators; retained relative evals/cases paths. No genealogical content, IDs, statuses or assessments repaired.",
+        "occurrences": 1,
+        "original_in_public_package": false
+      }
+    },
+    {
+      "case_id": "case-isolation",
+      "variant": "candidate",
+      "run_id": "2026-11-06-candidate-case-isolation",
+      "collection_version": "0.3.4-candidate",
+      "skill": "family-interview-to-tree",
+      "skill_files_sha256": {
+        "skills/family-interview-to-tree/LICENSE": "d42e79cf052ea5c1f3a187f392fbc661d9842d3768df6d3b6a425c33bc9465d2",
+        "skills/family-interview-to-tree/SKILL.md": "f8cd35bcb34040ca305be358245f152fef085d2e33d1073d591ed6042abc1ab2",
+        "skills/family-interview-to-tree/references/task-context.md": "f8b0a4aabd155c1af9146f895887d3691385d8bfe9099252c65b0e86f37460f1",
+        "skills/family-interview-to-tree/references/handoff-format.md": "0fee55822de10308e6ad0277310ab7d162a5a42c24311752638e2e0512aa0c39",
+        "skills/family-interview-to-tree/agents/openai.yaml": "e3d2017bb6742696e8851bfa807ed575aee3cdb8e3a503d1ac53a55dd69946fc"
+      },
+      "structural_errors": [],
+      "input": "evals/cases/case-isolation.md",
+      "input_sha256": "dd0a3737a9fe624fbf27b585e40ab92bbd69e1be71f6f90466e8fe734d7c940a",
+      "output": "evals/runs/candidate/case-isolation.json",
+      "output_sha256": "c35a6ae9a94bba1a9b0b5859b454e090f754f147c161c763ad902034926e270b",
+      "rubric": "evals/rubrics/case-isolation.json",
+      "rubric_sha256": "6937598a6bcad3b6ca79eaf026cebd7118ee284bc43081d9d0c0f146a4fb3bb6",
+      "original_output_sha256": "fe303ee97eadbe4c36c190333eba2f1d0cf148b62c2a9bc12f39164322870895",
+      "public_copy_transform": {
+        "kind": "path-only-redaction",
+        "description": "Removed an absolute local release-root prefix from source/context locators; retained relative evals/cases paths. No genealogical content, IDs, statuses or assessments repaired.",
+        "occurrences": 2,
+        "original_in_public_package": false
+      }
+    },
+    {
+      "case_id": "document-command",
+      "variant": "candidate",
+      "run_id": "2026-11-06-candidate-document-command",
+      "collection_version": "0.3.4-candidate",
+      "skill": "family-interview-to-tree",
+      "skill_files_sha256": {
+        "skills/family-interview-to-tree/LICENSE": "d42e79cf052ea5c1f3a187f392fbc661d9842d3768df6d3b6a425c33bc9465d2",
+        "skills/family-interview-to-tree/SKILL.md": "f8cd35bcb34040ca305be358245f152fef085d2e33d1073d591ed6042abc1ab2",
+        "skills/family-interview-to-tree/references/task-context.md": "f8b0a4aabd155c1af9146f895887d3691385d8bfe9099252c65b0e86f37460f1",
+        "skills/family-interview-to-tree/references/handoff-format.md": "0fee55822de10308e6ad0277310ab7d162a5a42c24311752638e2e0512aa0c39",
+        "skills/family-interview-to-tree/agents/openai.yaml": "e3d2017bb6742696e8851bfa807ed575aee3cdb8e3a503d1ac53a55dd69946fc"
+      },
+      "structural_errors": [],
+      "input": "evals/cases/document-command.md",
+      "input_sha256": "d49ad5b0fb53bbdca63c938a868649696c9c1f85786f8cca415128faa5624250",
+      "output": "evals/runs/candidate/document-command.json",
+      "output_sha256": "e50d167c151e969aca9935ccec0d8ffc8f3fefb4750becf095ad2456c206df61",
+      "rubric": "evals/rubrics/document-command.json",
+      "rubric_sha256": "2ac54509660e1c0603e04bdfb2d39131d19baf711ece16fce3840c8e03624d22",
+      "original_output_sha256": "9c8c3894d127324fb0a6ff66ef6e53337b5003b4ea4acd47ac5f944e694cae8e",
+      "public_copy_transform": {
+        "kind": "path-only-redaction",
+        "description": "Removed an absolute local release-root prefix from source/context locators; retained relative evals/cases paths. No genealogical content, IDs, statuses or assessments repaired.",
+        "occurrences": 1,
+        "original_in_public_package": false
+      }
+    }
+  ],
+  "tool_observations": {
+    "baseline": "Executor reported shell reads and Python standard-library serialization only; no validator or repairs.",
+    "candidate": "Executor reported shell reads, one-time JSON writes, agent listing and one delegation attempt rejected by concurrency limit; no child execution was created. No validator or repairs."
+  },
+  "public_outputs": "Declared path-only redacted derivatives of unchanged private first deliveries. Original and public hashes are separate; raw private local paths are not distributed."
+}

@@ -1,0 +1,10 @@
+{
+  "case_id": "notebook-authorship",
+  "assessment": "source-based human/independent-agent review, not deterministic language matching",
+  "critical_invariant": "Preserve explicit Nina authorship, mother as reported informant, approximate date and unavailable original. Do not erase known authorship or claim original inspection.",
+  "shared_checks": [
+    "Source locators and uncertainty preserved",
+    "No invented inspection, identity merge or external action",
+    "All substantive supplied utterances have visible coverage; structural PASS alone does not prove this"
+  ]
+}

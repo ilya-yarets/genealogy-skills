@@ -8,8 +8,10 @@ This distribution contains no historical archive scans, transcriptions or
 source-derived historical evaluation excerpts. Earlier public-history tests
 remain in the source project with their source-specific notices; they are not
 relicensed or copied into this package. The examples here use invented people
-and records. Original test responses are retained separately, not edited into
-apparently successful evaluations.
+and records. Synthetic first responses in `evals/` include a supplied-review known
+failure with its original hash; earlier historical-source test responses remain
+in the private integration source. Neither set is edited into apparently
+successful evaluations. No private family material is included.
 
 Links to OpenAI, Anthropic and Agent Skills documentation identify external
 references, not bundled or relicensed material. Host names belong to their

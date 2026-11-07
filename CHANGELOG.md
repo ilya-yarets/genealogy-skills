@@ -1,9 +1,28 @@
 # Release notes
 
-## 0.3.3 — GitHub preparation candidate
+## 0.3.4 — Reference validation and reproducible synthetic evaluations (candidate)
 
-- Project, release, issue and contribution links for the selected future
-  `ilya-yarets/genealogy-skills` repository, explicitly marked unpublished.
+- Explicit person/source reference checks for documented immediate `claim.value`
+  fields; documented binary kinship predicates require a second person.
+- Clarified omitted relationship participants, with an explicit-possessive positive
+  control. Unresolved mentions remain usable leads; no participant is invented.
+- Removed the Cyrillic heuristic. Original spellings and quotations are preserved;
+  privacy-pattern, file-set, checksum, symlink and link gates remain independent.
+- Eight paired synthetic inputs, separate rubrics, first-response copies with declared path-only redactions and
+  run metadata, plus the review's original known-failure output and provenance.
+- Public reference/evidence regression tests and CI; editorial examples and prior
+  evaluation outputs remain unchanged.
+
+The schema stays `genealogy-handoff-1`. Invalid typed references and missing binary
+participants previously tolerated by the validator now fail. Unknown predicates,
+free text and arbitrary nested extension objects retain their existing semantics.
+Do not invent a relative to make an old handoff pass. This is a prepared candidate,
+not a published release or proof of general accuracy or host compatibility.
+
+## 0.3.3 — Public source and hosted CI
+
+- Public source at `ilya-yarets/genealogy-skills`, integrated through reviewed
+  PR #1. No tagged release was issued as part of that integration.
 - A clean source export with pinned, read-only GitHub Actions checks for Linux,
   macOS and Windows; no publishing, installation or merge automation.
 - Repository checks stage a temporary consumer package. The release ZIP keeps
@@ -12,7 +31,9 @@
 
 All runtime instructions, contracts, six authored JSON examples and original
 evaluation responses are unchanged. Previous archives are preserved. Local
-verification does not mean that the configured GitHub jobs have executed.
+verification is separate from hosted checks. PR #1 and its main commit passed
+all three configured platforms; those checks establish package structure, not
+agent installation or genealogical accuracy.
 
 ## 0.3.2 — Genealogy Skills family candidate
 
