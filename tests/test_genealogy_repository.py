@@ -85,12 +85,14 @@ class RepositoryBoundaries(unittest.TestCase):
             root = Path(directory)
             fixture(root)
             target = root / "examples/interview/input.md"
-            target.write_text(original, encoding="utf-8")
-            payload = repository.payloads(root, REVISION)
-            self.assertEqual(payload["examples/interview/input.md"], original.encode("utf-8"))
+            for ending in ("\n", "\r\n"):
+                supplied_bytes = (original.rstrip("\n") + ending).encode("utf-8")
+                target.write_bytes(supplied_bytes)
+                payload = repository.payloads(root, REVISION)
+                self.assertEqual(payload["examples/interview/input.md"], supplied_bytes)
             for category, private in private_samples.items():
                 with self.subTest(category=category):
-                    target.write_text(original + private, encoding="utf-8")
+                    target.write_bytes((original + private).encode("utf-8"))
                     with self.assertRaisesRegex(ValueError, category) as caught:
                         repository.payloads(root, REVISION)
                     self.assertNotIn(private, str(caught.exception))
