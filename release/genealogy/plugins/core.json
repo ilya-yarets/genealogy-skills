@@ -1,0 +1,22 @@
+{
+  "version": "0.3.4",
+  "public_core_commit": "f095c56cb78b09a28beb98ee0ac14e054eb7325c",
+  "runtime_sha256": {
+    "skills/family-interview-to-tree/LICENSE": "d42e79cf052ea5c1f3a187f392fbc661d9842d3768df6d3b6a425c33bc9465d2",
+    "skills/family-interview-to-tree/SKILL.md": "f8cd35bcb34040ca305be358245f152fef085d2e33d1073d591ed6042abc1ab2",
+    "skills/family-interview-to-tree/agents/openai.yaml": "e3d2017bb6742696e8851bfa807ed575aee3cdb8e3a503d1ac53a55dd69946fc",
+    "skills/family-interview-to-tree/references/handoff-format.md": "0fee55822de10308e6ad0277310ab7d162a5a42c24311752638e2e0512aa0c39",
+    "skills/family-interview-to-tree/references/task-context.md": "f8b0a4aabd155c1af9146f895887d3691385d8bfe9099252c65b0e86f37460f1",
+    "skills/genealogy-evidence-review/LICENSE": "d42e79cf052ea5c1f3a187f392fbc661d9842d3768df6d3b6a425c33bc9465d2",
+    "skills/genealogy-evidence-review/SKILL.md": "413b28d4f19d065b0338b24d45332351637cdeeebd127bdbcce36ffa38280119",
+    "skills/genealogy-evidence-review/agents/openai.yaml": "b3cd28c5f9a76c467d3ae32012a60de72dbaece4f288d21745512ac2576628b1",
+    "skills/genealogy-evidence-review/references/handoff-format.md": "0fee55822de10308e6ad0277310ab7d162a5a42c24311752638e2e0512aa0c39",
+    "skills/genealogy-evidence-review/references/task-context.md": "f8b0a4aabd155c1af9146f895887d3691385d8bfe9099252c65b0e86f37460f1",
+    "skills/genealogy-researcher/LICENSE": "d42e79cf052ea5c1f3a187f392fbc661d9842d3768df6d3b6a425c33bc9465d2",
+    "skills/genealogy-researcher/SKILL.md": "67210a55644850b0740386b876720d0e0c15d752abc0093e2e69ba603931b0dc",
+    "skills/genealogy-researcher/agents/openai.yaml": "0f40272f7c4caa62082b7538166b9d2aabf685376a9872020d3e6af2837c3c8f",
+    "skills/genealogy-researcher/references/handoff-format.md": "0fee55822de10308e6ad0277310ab7d162a5a42c24311752638e2e0512aa0c39",
+    "skills/genealogy-researcher/references/research-sheet.md": "258def04ce1842d78bb30975302e005b6d8d71e6e619388061c9998d8aa450a7",
+    "skills/genealogy-researcher/references/task-context.md": "f8b0a4aabd155c1af9146f895887d3691385d8bfe9099252c65b0e86f37460f1"
+  }
+}

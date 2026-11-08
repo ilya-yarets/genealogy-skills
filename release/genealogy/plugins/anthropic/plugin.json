@@ -1,0 +1,13 @@
+{
+  "name": "genealogy-skills",
+  "version": "0.3.4",
+  "description": "Source-linked genealogy research, family interviews and evidence review.",
+  "author": {
+    "name": "Illia Yarats",
+    "url": "https://github.com/ilya-yarets"
+  },
+  "homepage": "https://github.com/ilya-yarets/genealogy-skills",
+  "repository": "https://github.com/ilya-yarets/genealogy-skills",
+  "license": "MIT",
+  "keywords": ["genealogy", "family-history", "evidence-analysis"]
+}
