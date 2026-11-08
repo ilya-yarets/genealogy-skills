@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "genealogy-skills",
+  "version": "0.3.4",
+  "description": "Source-linked genealogy research, family interviews and evidence review.",
+  "author": {
+    "name": "Illia Yarats",
+    "url": "https://github.com/ilya-yarets"
+  },
+  "homepage": "https://github.com/ilya-yarets/genealogy-skills",
+  "repository": "https://github.com/ilya-yarets/genealogy-skills",
+  "license": "MIT",
+  "keywords": ["genealogy", "family-history", "evidence-analysis"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Genealogy Skills",
+        "shortDescription": "Traceable family history",
+        "longDescription": "Organize family interviews, plan and document genealogy searches, and compare evidence with source locators. Preserve uncertainty and separate identity candidates. Results are proposals; this package does not edit a family tree.",
+        "developerName": "Illia Yarats",
+        "category": "Productivity",
+        "capabilities": ["Genealogy research", "Interview processing", "Evidence review"],
+        "websiteURL": "https://github.com/ilya-yarets/genealogy-skills",
+        "supportURL": "https://github.com/ilya-yarets/genealogy-skills/issues",
+        "brandColor": "#26474B",
+        "composerIcon": "./assets/icon.svg",
+        "logo": "./assets/icon.svg"
+      }
+    }
+  }
+}

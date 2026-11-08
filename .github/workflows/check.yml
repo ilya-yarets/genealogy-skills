@@ -38,3 +38,5 @@ jobs:
         run: python -B -m unittest discover -s tests -p 'test_genealogy*.py' -v
       - name: Check preserved evaluation evidence
         run: python -B tools/check_genealogy_evals.py
+      - name: Build and verify both plugin profiles
+        run: python -B tools/check_genealogy_plugin_builds.py --output-dir "${{ runner.temp }}/genealogy-plugin-check"

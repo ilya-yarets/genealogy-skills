@@ -105,8 +105,9 @@ will fail the integrity check until a maintainer builds a new release. Validate
 an edited JSON with the handoff validator directly; do not alter a released
 manifest merely to conceal a failed check.
 
-The clean GitHub source tree includes the skills, examples, repository checker
-and focused tests. It does not contain a frozen `MANIFEST.sha256` or `RELEASE.json`.
+The clean GitHub source tree includes the skills, examples, repository checker,
+plugin packaging tools/templates and focused tests. It does not contain a frozen
+`MANIFEST.sha256` or `RELEASE.json`.
 With Python 3.10+ and Git available, run from that checkout's root:
 
 ```sh
@@ -124,8 +125,8 @@ a shipped manifest. This is validation, not a committed-release build or proof
 that an edited checkout is clean. For a source export without `.git`, pass
 `--source-commit <full-source-sha>` from the delivery receipt explicitly.
 
-The prepared GitHub Actions workflow runs these commands for pushes, pull
-requests and manual dispatch. Its matrix is Linux/Python 3.10, macOS/Python 3.14
+The prepared GitHub Actions workflow runs these commands and the offline plugin
+build check below for pushes, pull requests and manual dispatch. Its matrix is Linux/Python 3.10, macOS/Python 3.14
 and Windows/Python 3.14. Actions are pinned to full commits; the token has only
 `contents: read`, checkout credentials are not persisted, and no release, install
 or merge step is present. No dependencies beyond Python's standard library are
@@ -134,10 +135,53 @@ not permit creating a test symlink. The matrix is configuration, not evidence
 that GitHub jobs or agent-host compatibility tests have run. Add required status
 checks to branch protection only after their first successful GitHub execution.
 
+### Build and check plugin ZIPs from a source checkout
+
+The public source includes both plugin profiles under
+`release/genealogy/plugins/`, their pinned schema/license, the builder/verifier,
+an offline build-check helper and plugin regressions. These are source templates,
+not a loaded plugin. The template README's skill-local links are intended for the
+built archive root rather than the template's source directory.
+
+From a committed Git checkout root with Python 3.10+ and Git available, use new
+output paths outside the checkout:
+
+```sh
+python3 -B tools/build_genealogy_plugin.py ../genealogy-skills-0.3.4-openai.zip --target openai
+python3 -B tools/verify_genealogy_plugin.py ../genealogy-skills-0.3.4-openai.zip --target openai
+python3 -B tools/build_genealogy_plugin.py ../genealogy-skills-0.3.4-anthropic.zip --target anthropic
+python3 -B tools/verify_genealogy_plugin.py ../genealogy-skills-0.3.4-anthropic.zip --target anthropic
+```
+
+The builder uses the checkout's full `HEAD` SHA and requires its inputs to match
+that commit. Commit reviewed inputs first; a source SHA supplied to a checker
+does not replace this committed-input requirement. Existing output files are
+never overwritten. Do not change a generated manifest to conceal changed bytes.
+Keep previous archives and record the printed SHA-256 with each filename in a
+plain-text checksum file. Where available, `sha256sum` or `shasum -a 256` computes
+those values independently. Use `sha256sum -c <checksum-file>` or
+`shasum -a 256 -c <checksum-file>` to verify a saved checksum file.
+
+For the complete offline packaging gate, choose a new directory outside the
+checkout and run:
+
+```sh
+python3 -B tools/check_genealogy_plugin_builds.py --output-dir ../genealogy-plugin-check-0.3.4
+```
+
+The helper builds each profile twice, verifies actual ZIPs and extracted files,
+compares unchanged runtime files and repeated hashes, and checks that verification
+leaves the extracted files unchanged. It uses Python's standard library and Git,
+without client installation, plugin loading, authentication, network or model
+calls. CI runs this check in the runner's temporary directory and does not upload
+release assets. This gate proves packaging behavior, not native host compatibility.
+
+### Additional canonical integration checks
+
 Until an explicit source transition, maintainers work in the designated
 integration checkout identified by its `AGENTS.md`
 and `docs/HANDOFF.md`. That checkout additionally contains canonical contracts,
-historical evaluations, tests and the builder; the consumer archive omits those
+historical evaluations, broader tests and the consumer/source-export builder; the consumer archive omits those
 maintenance-only files. Follow its root README for Python 3.11+ and development
 dependencies. With that environment already available, run from the source root:
 
@@ -186,7 +230,9 @@ announce incompatibilities even before 1.0. Revisit independent skill versions
 only if their release cycles actually diverge.
 
 Update release notes and the explicit export file list for new distributable
-files. Commit reviewed source inputs before building, then run:
+files. The additional consumer/source-export builder remains a canonical
+integration-checkout tool. Commit reviewed source inputs there before building,
+then run:
 
 ```sh
 python3 tools/build_genealogy_release.py .local/releases/genealogy-skills-0.3.4.zip

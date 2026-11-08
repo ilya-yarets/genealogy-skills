@@ -1,6 +1,6 @@
 # Release notes
 
-## 0.3.4 — Reference validation and reproducible synthetic evaluations (candidate)
+## 0.3.4 — Reference validation, plugin packages and scoped native checks (prepared locally)
 
 - Explicit person/source reference checks for documented immediate `claim.value`
   fields; documented binary kinship predicates require a second person.
@@ -12,12 +12,29 @@
   run metadata, plus the review's original known-failure output and provenance.
 - Public reference/evidence regression tests and CI; editorial examples and prior
   evaluation outputs remain unchanged.
+- OpenAI and Anthropic plugin archives built from the same unchanged three-skill
+  runtime, with host-specific manifests, licenses, provenance and offline checks.
+- Clean-source plugin build support: builder, verifier, pinned templates/schema
+  and license, focused regressions and a standard-library offline check that
+  builds both profiles twice, verifies the ZIPs/extractions and compares hashes.
+  The existing CI matrix runs that check without installing or loading plugins.
+- Isolated Codex CLI 0.166.0 native loading and three explicit calls completed;
+  their first JSONs validate and independent content/scope assessment passes
+  21/21 criteria. The interview loader's truncation warning and full-file recovery
+  are disclosed in the compatibility notes.
+- Claude Code 2.1.206 registers all three plugin skills; real model calls remain
+  unverified after the test account's authentication/subscription blocker.
+- Updated consumer instructions, compatibility limits and local 0.3.4 release
+  preparation. Earlier archives, first responses and version notes are retained.
 
 The schema stays `genealogy-handoff-1`. Invalid typed references and missing binary
 participants previously tolerated by the validator now fail. Unknown predicates,
 free text and arbitrary nested extension objects retain their existing semantics.
-Do not invent a relative to make an old handoff pass. This is a prepared candidate,
-not a published release or proof of general accuracy or host compatibility.
+Do not invent a relative to make an old handoff pass. The runtime core is pinned
+to public `f095c56`; delivery metadata identifies the later local packaging source.
+This preparation does not publish a release, install the rebuilt archives or
+repeat the earlier native calls. Automatic selection, GUI hosts, live archives
+and a no-skill superiority comparison remain unverified.
 
 ## 0.3.3 — Public source and hosted CI
 

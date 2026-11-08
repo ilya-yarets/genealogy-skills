@@ -32,6 +32,9 @@ SCOPE_FILES = {
     "tools/check_genealogy_repository.py", "tests/test_genealogy_repository.py",
     "tools/check_genealogy_evals.py", "tests/test_genealogy_evals.py",
     "tests/test_genealogy_handoff_references.py",
+    "tools/build_genealogy_plugin.py", "tools/verify_genealogy_plugin.py",
+    "tools/check_genealogy_plugin_builds.py",
+    "tests/test_genealogy_plugins.py",
 }
 BLOCKED_PARTS = {
     ".git", ".local", ".venv", "source-cache", "__pycache__", "dist", "build",
@@ -39,6 +42,9 @@ BLOCKED_PARTS = {
 }
 TEXT_SUFFIXES = {".md", ".json", ".yaml", ".yml", ".py"}
 TEXT_NAMES = {".gitignore", ".gitattributes", "MANIFEST.sha256", "LICENSE", "LICENSE.genealogy", "COPYING"}
+# This exact authored SVG is UTF-8 text. Active SVG content is additionally
+# rejected by the plugin verifier; this does not permit arbitrary image payloads.
+PLUGIN_TEXT_ASSETS = {"release/genealogy/plugins/openai/assets/icon.svg"}
 PATTERNS = {
     "local-environment-path": re.compile(r"/(?:Users|home)/[^/\s]+/|/(?:private/)?var/folders/|" + "/" + r"tmp/[^\s]+"),
     "email-address": re.compile(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}", re.I),
@@ -81,7 +87,7 @@ def path_errors(name, *, directory=False):
     if (not canonical or "\\" in name or path.as_posix() != canonical
             or any(ord(char) < 32 or ord(char) == 127 for char in name)):
         errors.append(f"{label}: noncanonical release path")
-    if not directory and path.suffix not in TEXT_SUFFIXES and path.name not in TEXT_NAMES:
+    if not directory and path.suffix not in TEXT_SUFFIXES and path.name not in TEXT_NAMES and name not in PLUGIN_TEXT_ASSETS:
         errors.append(f"{label}: non-release file type")
     return errors
 

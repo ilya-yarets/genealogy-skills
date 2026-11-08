@@ -4,16 +4,17 @@ A family of independent AI agent skills for collecting family testimony,
 researching records and reviewing genealogical evidence. Start with one task
 or carry a source-linked result from one skill to the next.
 
-**Version 0.3.4 candidate · English instructions · MIT · By Illia Yarats**
+**Version 0.3.4 · Prepared locally · English instructions · MIT · By Illia Yarats**
 
 [Project repository](https://github.com/ilya-yarets/genealogy-skills) ·
 [Release downloads](https://github.com/ilya-yarets/genealogy-skills/releases) ·
 [Report an issue](https://github.com/ilya-yarets/genealogy-skills/issues)
 
-The public source baseline is available on
-[`main`](https://github.com/ilya-yarets/genealogy-skills/tree/main).
-This 0.3.4 candidate is prepared for review; the version on main may differ.
-No tagged release has been issued.
+The 0.3.4 skill runtime is pinned to public source commit
+[`f095c56`](https://github.com/ilya-yarets/genealogy-skills/commit/f095c56cb78b09a28beb98ee0ac14e054eb7325c).
+These prepared archives also include later documentation and packaging work;
+their delivery metadata identifies the exact committed source revision. Preparing
+them does not create a GitHub tag, release or directory listing.
 
 These are instruction folders for an AI agent, not a family-tree application.
 You can use any one of them on its own. No private project, database, account,
@@ -77,7 +78,13 @@ reference answers. In real work, keep those outputs with your private case.
 This collection does not launch the three skills automatically. Installing a
 skill does not grant access to a family archive or permission to update a tree.
 
-## Install
+## Install standalone skill folders
+
+This section describes standalone folders. If you received
+`genealogy-skills-0.3.4-openai.zip` or `genealogy-skills-0.3.4-anthropic.zip`, use
+that archive's README for the plugin route and namespaced commands instead.
+The native checks below exercised plugin loading, rather than the standalone
+copy commands in this section. Avoid loading both copies of a skill at once.
 
 Download the
 [main branch as a ZIP](https://github.com/ilya-yarets/genealogy-skills/archive/refs/heads/main.zip)
@@ -89,8 +96,8 @@ git clone --branch main --single-branch https://github.com/ilya-yarets/genealogy
 
 Open the extracted folder or cloned `genealogy-skills` directory. Downloading or
 cloning does not install the skills. A locally supplied versioned release ZIP
-uses the same `skills/` layout. No downloadable tagged release is available yet;
-future releases will appear under
+uses the same `skills/` layout. Prepared local archives are not downloadable
+GitHub releases; published releases, when available, appear under
 [release downloads](https://github.com/ilya-yarets/genealogy-skills/releases).
 Each folder under `skills/` is a complete installable skill. Copy the
 **whole selected skill folder**, including `references/`, `agents/` and `LICENSE`.
@@ -227,25 +234,57 @@ without Git history, add `--source-commit <full-source-sha>` from its delivery
 receipt to the source-check command. See [contribution rules](CONTRIBUTING.md)
 for the source/archive distinction and CI limits.
 
+The source checkout also includes the OpenAI/Anthropic plugin builder, verifier,
+templates and focused regressions. From a committed Git checkout, the offline
+build check creates two builds of each profile, verifies the actual ZIPs and
+extractions, and compares runtime files and repeated bytes:
+
+```sh
+python3 -B tools/check_genealogy_plugin_builds.py --output-dir ../genealogy-plugin-check-0.3.4
+```
+
+Use a new output directory outside the checkout so generated files do not enter
+the strict source inventory. This check does not load or install a plugin, call
+a model or use the network. See the contribution rules for individual ZIP build
+commands. The source templates are not plugin installations.
+
 ## Compatibility and limits
 
 The folders use the [Agent Skills format](https://agentskills.io/specification).
 `agents/openai.yaml` adds Codex UI metadata; the core workflow is in `SKILL.md`
 and local references. No host-specific tool name is required by the workflow.
 
-Local packaging and schema checks are recorded in the source project. Earlier
-synthetic executions used Russian instructions. Version 0.3.1 also received
-three small English explicit-invocation checks and a fresh research recheck
-after clarifying coverage target IDs. Versions 0.3.2 and 0.3.3 retain exactly those
-runtime instructions. Version 0.3.4 adds a focused participant-attribution rule and
-[eight paired synthetic cases](evals/README.md), with first-output copies, declared path-only redactions,
-separate rubrics and recorded limitations. The 0.3.2 end-to-end example is authored teaching material, checked
-for structure and continuity; it is not a new multi-agent execution. The initial
-structural failure remains in the source project. These limited observations
-are not a reliability percentage. Clean installation, automatic skill selection,
-Claude runtime behavior, other hosts, live archives and a no-skill comparison
-have not been verified for this edition. The installation table describes
-supported host conventions, not a claim that those installation tests ran.
+Version 0.3.4 includes a focused participant-attribution rule and
+[eight paired synthetic cases](evals/README.md), with first-output copies,
+declared path-only redactions, separate rubrics and recorded limitations. Earlier
+Russian-instruction and small English explicit-invocation checks remain
+historical evidence. The three-stage example is authored teaching material,
+checked for structure and continuity; it is not a new multi-agent execution.
+Original failures remain preserved rather than replaced by reference answers.
+
+Separate native checks on 2026-11-06 used the unchanged 0.3.4 runtime in isolated
+profiles and external workspaces, with synthetic supplied text and no live
+archive access:
+
+| Client and tested route | Native loading | Explicit model calls |
+|---|---|---|
+| Codex CLI 0.166.0, temporary local marketplace and plugin installation | Exactly three plugin skills in the test catalog | Three first responses completed; all JSONs validate and all 21 independent content/scope criteria pass |
+| Claude Code 2.1.206, session-only `--plugin-dir` | All three plugin skills and slash commands registered | Not verified: the attempted call stopped at authentication; the test account lacked an eligible subscription |
+
+Codex was configured for `gpt-6.1-sol` with low reasoning effort; its event JSON
+did not independently report the server-side model identity. The interview call
+warned that inline instructions were truncated, then successfully read the full
+installed `SKILL.md` and both references before answering. The research and
+review calls had no such warning and read both references. First responses were
+preserved without repair or retry. These observations apply to three bounded
+cases, not a reliability percentage or proof of historical accuracy.
+
+This packaging work updates documentation and build/verification support; it does
+not repeat native installation or model calls. Its runtime remains byte-identical
+to the tested core. Automatic skill selection, ChatGPT GUI/Cowork, other hosts,
+live research and improvement over the same model without skills remain
+unverified. The standalone installation table describes host conventions, not
+an execution result for the copy commands.
 
 If a skill is missing, check that its name folder directly contains `SKILL.md`,
 that you copied all references, that the folder is in the active agent's local
@@ -281,4 +320,4 @@ in [evals](evals/README.md). Earlier evaluation responses, including failures, r
 source project. The concise English examples are labeled editorial adaptations,
 not replacement test answers. This collection excludes the mixed source
 repository's Git history, unrelated skills, private files and historical archive
-excerpts. Preparing this candidate does not itself publish or install it.
+excerpts. Preparing these archives does not itself publish or install them.
